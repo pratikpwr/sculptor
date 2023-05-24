@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../widgets/atoms/padding.dart';
@@ -19,35 +20,33 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 10,
-            spreadRadius: 2,
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(
-              items.length,
-              (index) => GestureDetector(
-                onTap: () => onTap(index),
-                child: _BottomNavBarItemWidget(
-                  item: items[index],
-                  isSelected: selectedIndex == index,
-                ),
+      margin: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      // decoration: const BoxDecoration(
+      //   borderRadius: BorderRadius.only(
+      //     topLeft: Radius.circular(30),
+      //     topRight: Radius.circular(30),
+      //   ),
+      //   boxShadow: [
+      //     BoxShadow(
+      //       color: Colors.black12,
+      //       blurRadius: 10,
+      //       spreadRadius: 2,
+      //     ),
+      //   ],
+      // ),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(
+            items.length,
+            (index) => GestureDetector(
+              onTap: () => onTap(index),
+              child: _BottomNavBarItemWidget(
+                item: items[index],
+                isSelected: selectedIndex == index,
               ),
-            )),
-      ),
+            ),
+          )),
     );
   }
 }

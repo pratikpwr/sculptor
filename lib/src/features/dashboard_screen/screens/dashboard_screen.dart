@@ -27,28 +27,30 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      // bottomNavigationBar: BottomNavBar(
-      //   items: [
-      //     BottomNavBarItem(
-      //       title: 'Events',
-      //       icon: Icons.event,
-      //     ),
-      //     BottomNavBarItem(
-      //       title: 'NGOs',
-      //       icon: Icons.business,
-      //     ),
-      //     BottomNavBarItem(
-      //       title: 'volunteer',
-      //       icon: Icons.people,
-      //     ),
-      //   ],
-      //   selectedIndex: _selectedIndex,
-      //   onTap: (index) {
-      //     setState(() {
-      //       _selectedIndex = index;
-      //     });
-      //   },
-      // ),
+      bottomNavigationBar: SafeArea(
+        child: BottomNavBar(
+          items: [
+            BottomNavBarItem(
+              title: 'Events',
+              icon: Icons.event,
+            ),
+            BottomNavBarItem(
+              title: 'NGOs',
+              icon: Icons.business,
+            ),
+            BottomNavBarItem(
+              title: 'volunteer',
+              icon: Icons.people,
+            ),
+          ],
+          selectedIndex: _selectedIndex,
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+        ),
+      ),
     );
   }
 }
