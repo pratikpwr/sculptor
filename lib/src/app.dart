@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/features/dashboard_screen/screens/dashboard_screen.dart';
+
+import 'features/dashboard_screen/screens/dashboard_screen.dart';
 
 class SculptorApp extends StatelessWidget {
   const SculptorApp({Key? key}) : super(key: key);

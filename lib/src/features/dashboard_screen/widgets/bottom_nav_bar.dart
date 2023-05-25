@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../widgets/atoms/padding.dart';
+import '../../../widgets/glass_morphic_widget.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -18,25 +18,15 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 80,
-      margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      // decoration: const BoxDecoration(
-      //   borderRadius: BorderRadius.only(
-      //     topLeft: Radius.circular(30),
-      //     topRight: Radius.circular(30),
-      //   ),
-      //   boxShadow: [
-      //     BoxShadow(
-      //       color: Colors.black12,
-      //       blurRadius: 10,
-      //       spreadRadius: 2,
-      //     ),
-      //   ],
-      // ),
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return GlassMorphicBackground(
+      height: 64,
+      blur: 8,
+      color: Colors.white.withOpacity(0.5),
+      borderRadius: BorderRadius.circular(30),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(
             items.length,
             (index) => GestureDetector(
@@ -46,9 +36,12 @@ class BottomNavBar extends StatelessWidget {
                 isSelected: selectedIndex == index,
               ),
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
+  // Color(0xffc7e0fe).withOpacity(0.1)
 }
 
 class BottomNavBarItem {
@@ -73,22 +66,27 @@ class _BottomNavBarItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          item.icon,
-          color: isSelected ? Theme.of(context).primaryColor : Colors.grey,
-        ),
-        padding4,
-        Text(
-          item.title,
-          style: GoogleFonts.poppins(
+    return SizedBox(
+      width: 84,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            item.icon,
+            size: 20,
             color: isSelected ? Theme.of(context).primaryColor : Colors.grey,
-            fontWeight: FontWeight.w500,
           ),
-        ),
-      ],
+          padding4,
+          Text(
+            item.title,
+            style: GoogleFonts.poppins(
+              fontSize: 12,
+              color: isSelected ? Theme.of(context).primaryColor : Colors.grey,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
