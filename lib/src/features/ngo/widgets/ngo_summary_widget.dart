@@ -16,7 +16,7 @@ class NGOSummaryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.only(bottom: 10.0),
       child: GlassMorphicItem(
         height: 100,
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),

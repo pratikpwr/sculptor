@@ -22,19 +22,21 @@ class BottomNavBar extends StatelessWidget {
       blur: 8,
       color: Colors.white.withOpacity(0.5),
       borderRadius: BorderRadius.circular(30),
+      enableShadow: false,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(
             items.length,
-            (index) => GlassMorphicItem(
-              borderRadius: BorderRadius.circular(30),
-              color: selectedIndex == index
-                  ? Colors.indigoAccent.withOpacity(0.1)
-                  : Colors.transparent,
-              child: GestureDetector(
-                onTap: () => onTap(index),
+            (index) => GestureDetector(
+              onTap: () => onTap(index),
+              child: GlassMorphicItem(
+                borderRadius: BorderRadius.circular(30),
+                color: selectedIndex == index
+                    ? Colors.indigoAccent.withOpacity(0.1)
+                    : Colors.transparent,
+                enableShadow: selectedIndex == index,
                 child: _BottomNavBarItemWidget(
                   item: items[index],
                   isSelected: selectedIndex == index,

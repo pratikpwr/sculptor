@@ -13,7 +13,7 @@ class IconButtonItem extends StatelessWidget {
   });
 
   final String icon;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final double size;
   final Color? color;
 
@@ -21,10 +21,11 @@ class IconButtonItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassMorphicItem(
       borderRadius: BorderRadius.circular(12),
+      enableShadow: false,
       child: InkWell(
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(10.0),
           child: IconItem(
             path: icon,
             size: size,
