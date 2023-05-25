@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/widgets/atoms/icon_item.dart';
 
-import '../../../widgets/molecules/glass_morphic_widget.dart';
+import '../../../ui/atoms/icon_item.dart';
+import '../../../ui/molecules/glass_morphic_item.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -17,7 +17,7 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassMorphicBackground(
+    return GlassMorphicItem(
       height: 64,
       blur: 8,
       color: Colors.white.withOpacity(0.5),
@@ -28,7 +28,7 @@ class BottomNavBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(
             items.length,
-            (index) => GlassMorphicBackground(
+            (index) => GlassMorphicItem(
               borderRadius: BorderRadius.circular(30),
               color: selectedIndex == index
                   ? Colors.indigoAccent.withOpacity(0.1)

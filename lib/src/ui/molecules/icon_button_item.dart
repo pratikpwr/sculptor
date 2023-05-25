@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'glass_morphic_widget.dart';
+import '../atoms/icon_item.dart';
+import 'glass_morphic_item.dart';
 
 class IconButtonItem extends StatelessWidget {
   const IconButtonItem({
@@ -8,24 +9,24 @@ class IconButtonItem extends StatelessWidget {
     required this.icon,
     required this.onTap,
     this.size = 24,
-    this.color = Colors.indigoAccent,
+    this.color,
   });
 
-  final IconData icon;
+  final String icon;
   final VoidCallback onTap;
   final double size;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
-    return GlassMorphicBackground(
+    return GlassMorphicItem(
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
-          child: Icon(
-            icon,
+          child: IconItem(
+            path: icon,
             size: size,
             color: color,
           ),

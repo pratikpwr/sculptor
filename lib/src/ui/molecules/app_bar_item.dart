@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/extensions/context_extension.dart';
 import 'icon_button_item.dart';
 
 class AppBarItem extends StatelessWidget {
@@ -11,13 +12,16 @@ class AppBarItem extends StatelessWidget {
   });
 
   final String title;
-  final IconData? icon;
+  final String? icon;
   final VoidCallback? onTapIcon;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12, left: 12, right: 12),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12,
+        vertical: 8,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,7 +29,12 @@ class AppBarItem extends StatelessWidget {
             IconButtonItem(
               icon: icon!,
               onTap: onTapIcon!,
+              color: Colors.indigo,
             ),
+          Text(
+            title,
+            style: context.textTheme.titleLarge!.copyWith(color: Colors.black),
+          ),
           ClipRRect(
             borderRadius: BorderRadius.circular(25),
             child: Image.network(

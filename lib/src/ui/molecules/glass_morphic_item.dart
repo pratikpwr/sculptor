@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 
-class GlassMorphicBackground extends StatelessWidget {
-  const GlassMorphicBackground({
+class GlassMorphicItem extends StatelessWidget {
+  const GlassMorphicItem({
     super.key,
     required this.child,
     this.height,
