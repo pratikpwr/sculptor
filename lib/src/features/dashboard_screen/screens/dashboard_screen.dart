@@ -50,15 +50,18 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         items: [
           BottomNavBarItem(
             title: 'Events',
-            icon: Icons.event,
+            icon: Assets.eventFilled,
+            unSelectedIcon: Assets.eventUnfilled,
           ),
           BottomNavBarItem(
             title: 'NGOs',
-            icon: Icons.business,
+            icon: Assets.ngoFilled,
+            unSelectedIcon: Assets.ngoUnfilled,
           ),
           BottomNavBarItem(
             title: 'Volunteer',
-            icon: Icons.people,
+            icon: Assets.volunteerFilled,
+            unSelectedIcon: Assets.volunteerUnfilled,
           ),
 
         ],

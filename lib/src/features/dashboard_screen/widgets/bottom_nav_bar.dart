@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:sculptor/src/widgets/atoms/icon_item.dart';
 
-import '../../../widgets/atoms/padding.dart';
-import '../../../widgets/glass_morphic_widget.dart';
+import '../../../widgets/molecules/glass_morphic_widget.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -29,11 +28,17 @@ class BottomNavBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(
             items.length,
-            (index) => GestureDetector(
-              onTap: () => onTap(index),
-              child: _BottomNavBarItemWidget(
-                item: items[index],
-                isSelected: selectedIndex == index,
+            (index) => GlassMorphicBackground(
+              borderRadius: BorderRadius.circular(30),
+              color: selectedIndex == index
+                  ? Colors.indigoAccent.withOpacity(0.1)
+                  : Colors.transparent,
+              child: GestureDetector(
+                onTap: () => onTap(index),
+                child: _BottomNavBarItemWidget(
+                  item: items[index],
+                  isSelected: selectedIndex == index,
+                ),
               ),
             ),
           ),
@@ -41,17 +46,19 @@ class BottomNavBar extends StatelessWidget {
       ),
     );
   }
-  // Color(0xffc7e0fe).withOpacity(0.1)
+// Color(0xffc7e0fe).withOpacity(0.1)
 }
 
 class BottomNavBarItem {
   BottomNavBarItem({
     required this.icon,
     required this.title,
+    this.unSelectedIcon,
   });
 
-  final IconData icon;
+  final String icon;
   final String title;
+  final String? unSelectedIcon;
 }
 
 class _BottomNavBarItemWidget extends StatelessWidget {
@@ -71,20 +78,20 @@ class _BottomNavBarItemWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            item.icon,
-            size: 20,
-            color: isSelected ? Theme.of(context).primaryColor : Colors.grey,
+          IconItem(
+            path: isSelected ? item.icon : item.unSelectedIcon ?? item.icon,
+            size: 28,
+            color: isSelected ? null : Colors.blueGrey,
           ),
-          padding4,
-          Text(
-            item.title,
-            style: GoogleFonts.poppins(
-              fontSize: 12,
-              color: isSelected ? Theme.of(context).primaryColor : Colors.grey,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+          // padding4,
+          // Text(
+          //   item.title,
+          //   style: GoogleFonts.poppins(
+          //     fontSize: 12,
+          //     color: isSelected ? Theme.of(context).primaryColor : Colors.grey,
+          //     fontWeight: FontWeight.w500,
+          //   ),
+          // ),
         ],
       ),
     );

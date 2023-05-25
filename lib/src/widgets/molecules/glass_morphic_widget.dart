@@ -28,7 +28,7 @@ class GlassMorphicBackground extends StatelessWidget {
       width: width ,
       blur: blur,
       color: color ?? Colors.white.withOpacity(0.5),
-      shadowColor: Colors.black38,
+      shadowColor: Colors.black26,
       borderRadius: borderRadius,
       border: null,
       child: Padding(
