@@ -25,7 +25,7 @@ class NGOModel {
       managerPhone: "123-456-7890",
       deputyManager: "Jane Doe",
       deputyManagerPhone: "987-654-3210",
-      image: "https://vakilsearch.com/blog/wp-content/uploads/2021/05/VS_Blog-Images_3-05.png",
+      image: "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
     ),
     NGOModel(
       name: "Self Help NGO",
@@ -34,7 +34,7 @@ class NGOModel {
       managerPhone: "555-555-5555",
       deputyManager: "Sarah Thompson",
       deputyManagerPhone: "999-999-9999",
-      image: "https://img.freepik.com/premium-vector/ngo-nongovernmental-organization-serve-specific-social-template-hand-drawn-illustration_2175-7898.jpg?w=2000",
+      image: "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
     ),
     NGOModel(
       name: "NGO Three",
@@ -43,7 +43,7 @@ class NGOModel {
       managerPhone: "111-222-3333",
       deputyManager: "David Wilson",
       deputyManagerPhone: "444-555-6666",
-      image: "https://static.vecteezy.com/system/resources/previews/015/277/729/original/social-organization-logo-social-community-logo-template-illustration-eps-10-free-vector.jpg",
+      image: "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
     ),
     NGOModel(
       name: "Save Tree Fondation",
@@ -52,7 +52,7 @@ class NGOModel {
       managerPhone: "777-888-9999",
       deputyManager: "Christopher Davis",
       deputyManagerPhone: "222-333-4444",
-      image: "https://www.shutterstock.com/image-vector/ngo-earth-planet-hands-palm-260nw-1867730668.jpg",
+      image: "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
     ),
     NGOModel(
       name: "Kids Are Future",
@@ -61,7 +61,7 @@ class NGOModel {
       managerPhone: "555-555-5555",
       deputyManager: "Sarah Thompson",
       deputyManagerPhone: "999-999-9999",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQHdW6rpvi6weiED33ILgaz_OOo_pxL-GPtQ&usqp=CAU",
+      image: "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
     ),
     NGOModel(
       name: "NAAM Foundation",
