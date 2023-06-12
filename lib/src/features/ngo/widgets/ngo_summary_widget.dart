@@ -16,23 +16,29 @@ class NGOSummaryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
+      padding: const EdgeInsets.only(bottom: 12.0),
       child: GlassMorphicItem(
         // height: 220,
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         borderRadius: BorderRadius.circular(12),
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withOpacity(0.2),
         enableBorder: true,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
+            GlassMorphicItem(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               borderRadius: BorderRadius.circular(12),
-              child: Image.network(
-                ngo.image,
-                height: 180,
-                width: 150,
-                fit: BoxFit.fitHeight,
+              color: Colors.white.withOpacity(0.3),
+              enableShadow: false,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.network(
+                  ngo.image,
+                  height: 180,
+                  width: 150,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
             padding12,
@@ -43,7 +49,7 @@ class NGOSummaryWidget extends StatelessWidget {
                   Text(
                     ngo.name,
                     style: context.textTheme.titleLarge!
-                        .copyWith(color: Colors.white),
+                        .copyWith(color: Colors.black),
                   ),
                   padding12,
                   Row(
@@ -51,13 +57,13 @@ class NGOSummaryWidget extends StatelessWidget {
                       const Icon(
                         Icons.location_on_outlined,
                         size: 18,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                       padding4,
                       Text(
                         ngo.address,
                         style: context.textTheme.bodyMedium!
-                            .copyWith(color: Colors.white),
+                            .copyWith(color: Colors.black),
                       ),
                     ],
                   ),
@@ -67,13 +73,13 @@ class NGOSummaryWidget extends StatelessWidget {
                       Icon(
                         Icons.person_2_outlined,
                         size: 18,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                       padding4,
                       Text(
                         ngo.manager,
                         style: context.textTheme.bodyMedium!
-                            .copyWith(color: Colors.white),
+                            .copyWith(color: Colors.black),
                       ),
                     ],
                   )

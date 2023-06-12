@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:sculptor/src/core/constants/assets.dart';
 import 'package:sculptor/src/core/extensions/context_extension.dart';
 import 'package:sculptor/src/features/events/screens/events_screen.dart';
@@ -30,16 +29,35 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.network(
-              'https://media.istockphoto.com/id/1219726149/video/abstract-balls-neon-blue.jpg?s=640x640&k=20&c=t2jfXQd9Yt9LQM5gereRGbq-_oruVI1939E_V1q5KSk=',
+            child: Image.asset(
+              'assets/images/peach_bg.jpg',
               fit: BoxFit.fitHeight,
               height: context.screenHeight,
               width: context.screenWidth,
-            ).blur(blur: 0),
+            ),
           ),
           _widgetOptions[_selectedIndex],
-          _bottomBar(),
+          // _bottomBar(),
         ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[],
+        ),
+        shape: CircularNotchedRectangle(),
+        color: Colors.blueGrey,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _selectedIndex = 2;
+          });
+        },
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -66,7 +84,6 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             icon: Assets.volunteerFilled,
             unSelectedIcon: Assets.volunteerUnfilled,
           ),
-
         ],
         selectedIndex: _selectedIndex,
         onTap: (index) {
@@ -81,3 +98,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
 
 //https://img.freepik.com/premium-photo/3d-colorful-sphere-ball-background-abstract-3d-background_518421-166.jpg
+
+// https://img.freepik.com/free-photo/peach-petal-texture-background-blog-banner_53876-119884.jpg
+
+// https://static.vecteezy.com/system/resources/previews/008/289/330/original/abstract-colorful-background-pink-peach-blue-pastel-skin-light-kids-color-gradiant-illustration-pink-peach-blue-color-gradiant-background-free-vector.jpg
