@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/ui/atoms/padding.dart';
-import 'package:sculptor/src/ui/molecules/glass_morphic_item.dart';
+import 'package:sculptor/src/ui/themes/colors.dart';
 
 import '../../core/extensions/context_extension.dart';
-import 'icon_button_item.dart';
+import 'glass_morphic_item.dart';
 
 class SliverHeaderItem extends StatelessWidget {
   const SliverHeaderItem({
@@ -18,11 +17,10 @@ class SliverHeaderItem extends StatelessWidget {
         title: GlassMorphicItem(
           blur: 15,
           enableShadow: false,
-          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.white.withOpacity(0.5),
+          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+          borderRadius: BorderRadius.circular(8),
           enableBorder: true,
-          child: Row(
+          child: const Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               HeaderItemTile(
@@ -64,12 +62,12 @@ class HeaderItemTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         color: isSelected ? Colors.white : Colors.transparent,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(6),
       ),
       child: Text(
         title,
         style: isSelected
-            ? context.textTheme.labelMedium?.copyWith(color: Colors.green)
+            ? context.textTheme.labelMedium?.copyWith(color: AppColors.accentColor)
             : context.textTheme.labelMedium,
       ),
     );

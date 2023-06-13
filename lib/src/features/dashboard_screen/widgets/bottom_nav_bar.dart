@@ -20,7 +20,6 @@ class BottomNavBar extends StatelessWidget {
     return GlassMorphicItem(
       height: 64,
       blur: 8,
-      color: Colors.white.withOpacity(0.5),
       borderRadius: BorderRadius.circular(30),
       enableShadow: false,
       child: Padding(
@@ -31,16 +30,9 @@ class BottomNavBar extends StatelessWidget {
             items.length,
             (index) => GestureDetector(
               onTap: () => onTap(index),
-              child: GlassMorphicItem(
-                borderRadius: BorderRadius.circular(30),
-                color: selectedIndex == index
-                    ? Colors.indigoAccent.withOpacity(0.1)
-                    : Colors.transparent,
-                enableShadow: selectedIndex == index,
-                child: _BottomNavBarItemWidget(
-                  item: items[index],
-                  isSelected: selectedIndex == index,
-                ),
+              child: _BottomNavBarItemWidget(
+                item: items[index],
+                isSelected: selectedIndex == index,
               ),
             ),
           ),
@@ -65,7 +57,6 @@ class BottomNavBarItem {
 
 class _BottomNavBarItemWidget extends StatelessWidget {
   const _BottomNavBarItemWidget({
-    super.key,
     required this.item,
     required this.isSelected,
   });
@@ -76,7 +67,7 @@ class _BottomNavBarItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 84,
+      width: 64,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'features/dashboard_screen/screens/dashboard_screen.dart';
-import 'ui/themes/type_scale.dart';
+import 'ui/themes/colors.dart';
+import 'ui/themes/text_theme.dart';
 
 class SculptorApp extends StatelessWidget {
   const SculptorApp({Key? key}) : super(key: key);
@@ -10,8 +11,10 @@ class SculptorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        useMaterial3: true,
-        textTheme: textTheme,
+        // useMaterial3: true,
+        textTheme: textTheme.apply(
+          bodyColor: AppColors.primaryText,
+        ),
       ),
       debugShowCheckedModeBanner: false,
       home: const DashBoardScreen(),

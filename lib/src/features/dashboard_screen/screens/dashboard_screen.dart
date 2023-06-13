@@ -4,6 +4,8 @@ import 'package:sculptor/src/core/extensions/context_extension.dart';
 import 'package:sculptor/src/features/events/screens/events_screen.dart';
 import 'package:sculptor/src/features/ngo/screens/ngo_screen.dart';
 import 'package:sculptor/src/features/volunteer/screens/volunteer_screen.dart';
+import 'package:sculptor/src/ui/atoms/padding.dart';
+import 'package:sculptor/src/ui/molecules/glass_morphic_item.dart';
 
 import '../widgets/bottom_nav_bar.dart';
 
@@ -15,49 +17,87 @@ class DashBoardScreen extends StatefulWidget {
 }
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
+
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   static const List<Widget> _widgetOptions = <Widget>[
-    EventsScreen(),
     NGOScreen(),
+    EventsScreen(),
     VolunteerScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       body: Stack(
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/peach_bg.jpg',
+              'assets/images/shape_bg.jpg',
               fit: BoxFit.fitHeight,
               height: context.screenHeight,
               width: context.screenWidth,
             ),
           ),
           _widgetOptions[_selectedIndex],
-          // _bottomBar(),
+          _bottomBar(),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[],
-        ),
-        shape: CircularNotchedRectangle(),
-        color: Colors.blueGrey,
+      endDrawer: GlassMorphicItem(
+        width: 250,
+        height: context.screenHeight,
+        child: const Text('Drawer'),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _selectedIndex = 2;
-          });
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      drawerScrimColor: Colors.transparent,
+    );
+  }
+
+  Widget _bottomAppBar() {
+    return BottomAppBar(
+      shape: const CircularNotchedRectangle(),
+      // color: Colors.white.withOpacity(0.2),
+      // elevation: 0,
+      height: 64,
+      notchMargin: 8,
+      elevation: 0,
+      child: IconTheme(
+        data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.calendar_month,
+                color: Colors.grey,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.search,
+                color: Colors.grey,
+              ),
+              onPressed: () {},
+            ),
+            padding16,
+            IconButton(
+              icon: const Icon(
+                Icons.favorite,
+                color: Colors.grey,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.grey,
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -70,32 +110,41 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       child: BottomNavBar(
         items: [
           BottomNavBarItem(
-            title: 'Events',
-            icon: Assets.eventFilled,
-            unSelectedIcon: Assets.eventUnfilled,
-          ),
-          BottomNavBarItem(
             title: 'NGOs',
             icon: Assets.ngoFilled,
             unSelectedIcon: Assets.ngoUnfilled,
+          ),
+          BottomNavBarItem(
+            title: 'Events',
+            icon: Assets.eventFilled,
+            unSelectedIcon: Assets.eventUnfilled,
           ),
           BottomNavBarItem(
             title: 'Volunteer',
             icon: Assets.volunteerFilled,
             unSelectedIcon: Assets.volunteerUnfilled,
           ),
+          BottomNavBarItem(
+            title: 'Menu',
+            icon: Assets.menu,
+            unSelectedIcon: Assets.menu,
+          ),
         ],
         selectedIndex: _selectedIndex,
         onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
+          if (index == 3) {
+            // open drawer
+            _key.currentState!.openEndDrawer();
+          } else {
+            setState(() {
+              _selectedIndex = index;
+            });
+          }
         },
       ),
     );
   }
 }
-
 
 //https://img.freepik.com/premium-photo/3d-colorful-sphere-ball-background-abstract-3d-background_518421-166.jpg
 
