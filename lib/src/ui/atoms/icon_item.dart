@@ -5,7 +5,7 @@ class IconItem extends StatelessWidget {
     super.key,
     required this.path,
     required this.size,
-     this.color,
+    this.color,
   });
 
   final String path;

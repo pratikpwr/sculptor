@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/core/constants/assets.dart';
-import 'package:sculptor/src/core/extensions/context_extension.dart';
-import 'package:sculptor/src/features/events/screens/events_screen.dart';
-import 'package:sculptor/src/features/ngo/screens/ngo_screen.dart';
-import 'package:sculptor/src/features/volunteer/screens/volunteer_screen.dart';
-import 'package:sculptor/src/ui/atoms/padding.dart';
-import 'package:sculptor/src/ui/molecules/glass_morphic_item.dart';
 
+import '../../../core/constants/assets.dart';
+import '../../../core/extensions/context_extension.dart';
+import '../../events/screens/events_screen.dart';
+import '../../ngo/screens/ngo_screen.dart';
+import '../../volunteer/screens/volunteer_screen.dart';
 import '../widgets/bottom_nav_bar.dart';
+import '../widgets/drawer_widget.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({Key? key}) : super(key: key);
@@ -45,60 +44,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           _bottomBar(),
         ],
       ),
-      endDrawer: GlassMorphicItem(
-        width: 250,
-        height: context.screenHeight,
-        child: const Text('Drawer'),
-      ),
+      endDrawer: const DrawerWidget(),
       drawerScrimColor: Colors.transparent,
-    );
-  }
-
-  Widget _bottomAppBar() {
-    return BottomAppBar(
-      shape: const CircularNotchedRectangle(),
-      // color: Colors.white.withOpacity(0.2),
-      // elevation: 0,
-      height: 64,
-      notchMargin: 8,
-      elevation: 0,
-      child: IconTheme(
-        data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(
-                Icons.calendar_month,
-                color: Colors.grey,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.search,
-                color: Colors.grey,
-              ),
-              onPressed: () {},
-            ),
-            padding16,
-            IconButton(
-              icon: const Icon(
-                Icons.favorite,
-                color: Colors.grey,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.grey,
-              ),
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ),
     );
   }
 

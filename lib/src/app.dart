@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'features/dashboard_screen/screens/dashboard_screen.dart';
+import 'features/dashboard/screens/dashboard_screen.dart';
 import 'ui/themes/colors.dart';
 import 'ui/themes/text_theme.dart';
 

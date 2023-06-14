@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/ui/themes/colors.dart';
 
 import '../../core/extensions/context_extension.dart';
+import '../themes/colors.dart';
 import 'glass_morphic_item.dart';
 
 class SliverHeaderItem extends StatelessWidget {
@@ -67,7 +67,8 @@ class HeaderItemTile extends StatelessWidget {
       child: Text(
         title,
         style: isSelected
-            ? context.textTheme.labelMedium?.copyWith(color: AppColors.accentColor)
+            ? context.textTheme.labelMedium
+                ?.copyWith(color: AppColors.accentColor)
             : context.textTheme.labelMedium,
       ),
     );

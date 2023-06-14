@@ -19,4 +19,3 @@ const padding32 = SizedBox(width: 32, height: 32);
 const padding48 = SizedBox(width: 48, height: 48);
 
 const padding64 = SizedBox(width: 64, height: 64);
-

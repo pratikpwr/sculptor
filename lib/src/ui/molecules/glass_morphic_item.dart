@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 
@@ -62,14 +60,12 @@ class GlassMorphicItem extends StatelessWidget {
       width: width,
       blur: blur,
       color: Colors.white.withOpacity(opacity),
-      shadowColor: enableShadow
-          ? const Color(0x3D333333)
-          : Colors.transparent,
+      shadowColor: enableShadow ? const Color(0x3D333333) : Colors.transparent,
       borderRadius: borderRadius,
       border: enableBorder
           ? Border.all(
               color: Colors.white.withOpacity(0.3),
-              width:1.5,
+              width: 1.5,
             )
           : Border.all(
               color: Colors.transparent,

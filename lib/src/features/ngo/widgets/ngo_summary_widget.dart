@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/ui/themes/colors.dart';
+import '../../../ui/themes/colors.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/atoms/glass_divider.dart';
@@ -109,8 +109,10 @@ class UserAndNumberItem extends StatelessWidget {
             padding4,
             Text(
               name,
-              style: context.textTheme.bodyMedium!
-                  .copyWith(color: AppColors.secondaryText, fontWeight: FontWeight.w500),
+              style: context.textTheme.bodyMedium!.copyWith(
+                color: AppColors.secondaryText,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ],
         ),
