@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/ui/themes/colors.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/atoms/glass_divider.dart';
@@ -19,7 +20,6 @@ class NGOSummaryWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
       child: GlassMorphicItem(
-        // height: 220,
         padding: const EdgeInsets.symmetric(vertical: 12),
         borderRadius: BorderRadius.circular(12),
         opacity: 0.2,
@@ -40,7 +40,7 @@ class NGOSummaryWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                       child: Image.network(
                         ngo.image,
-                        height: 180,
+                        height: 160,
                         width: 150,
                         fit: BoxFit.fitHeight,
                       ),
@@ -56,35 +56,15 @@ class NGOSummaryWidget extends StatelessWidget {
                           style: context.textTheme.titleMedium,
                         ),
                         padding12,
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.location_on_outlined,
-                              size: 18,
-                              color: Colors.black,
-                            ),
-                            padding4,
-                            Text(
-                              ngo.address,
-                              style: context.textTheme.bodyMedium,
-                            ),
-                          ],
+                        UserAndNumberItem(
+                          name: 'Sanjay Kumar',
+                          number: '9876543210',
                         ),
-                        padding4,
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.person_2_outlined,
-                              size: 18,
-                              color: Colors.black,
-                            ),
-                            padding4,
-                            Text(
-                              ngo.manager,
-                              style: context.textTheme.bodyMedium,
-                            ),
-                          ],
-                        )
+                        padding8,
+                        UserAndNumberItem(
+                          name: 'Kiran Modi',
+                          number: '9876543210',
+                        ),
                       ],
                     ),
                   ),
@@ -101,6 +81,56 @@ class NGOSummaryWidget extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class UserAndNumberItem extends StatelessWidget {
+  const UserAndNumberItem({
+    super.key,
+    required this.name,
+    required this.number,
+  });
+
+  final String name;
+  final String number;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            const Icon(
+              Icons.person_2_outlined,
+              size: 20,
+              color: AppColors.secondaryText,
+            ),
+            padding4,
+            Text(
+              name,
+              style: context.textTheme.bodyMedium!
+                  .copyWith(color: AppColors.secondaryText, fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+        padding4,
+        Row(
+          children: [
+            const Icon(
+              Icons.phone_outlined,
+              size: 20,
+              color: AppColors.secondaryText,
+            ),
+            padding4,
+            Text(
+              number,
+              style: context.textTheme.bodyMedium!
+                  .copyWith(color: AppColors.secondaryText),
+            ),
+          ],
+        )
+      ],
     );
   }
 }
