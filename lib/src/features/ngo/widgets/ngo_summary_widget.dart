@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../ui/themes/colors.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/atoms/glass_divider.dart';
 import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_morphic_item.dart';
+import '../../../ui/themes/colors.dart';
 import '../models/ngo_model.dart';
 
 class NGOSummaryWidget extends StatelessWidget {
