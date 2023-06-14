@@ -19,3 +19,24 @@ class GlassDivider extends StatelessWidget {
     );
   }
 }
+
+// vertical glass divider
+class VerticalGlassDivider extends StatelessWidget {
+  const VerticalGlassDivider({
+    super.key,
+    this.width = 1,
+    this.height = double.infinity,
+  });
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return GlassMorphicItem(
+      width: width,
+      height: height,
+      child: const SizedBox.shrink(),
+    );
+  }
+}

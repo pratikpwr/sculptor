@@ -9,6 +9,7 @@ class SliverAppBarItem extends StatelessWidget {
     required this.title,
     this.icon,
     this.onTapIcon,
+    this.centerTitle = true,
     this.actions = const [],
   });
 
@@ -16,6 +17,7 @@ class SliverAppBarItem extends StatelessWidget {
   final String? icon;
   final VoidCallback? onTapIcon;
   final List<Widget> actions;
+  final bool centerTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +28,9 @@ class SliverAppBarItem extends StatelessWidget {
         pinned: false,
         snap: false,
         floating: true,
-        centerTitle: true,
+        centerTitle: centerTitle,
         backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         automaticallyImplyLeading: true,
         leading: icon != null
             ? Padding(
