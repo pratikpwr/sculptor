@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../ui/molecules/confirm_delete_dialog_box.dart';
+import '../../../ui/molecules/dismissible_background.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
 import '../models/volunteer_model.dart';
 import '../widgets/volunteer_summary_item.dart';
 
-class VolunteerScreen extends StatelessWidget {
+class VolunteerScreen extends StatefulWidget {
   const VolunteerScreen({Key? key}) : super(key: key);
+
+  @override
+  State<VolunteerScreen> createState() => _VolunteerScreenState();
+}
+
+class _VolunteerScreenState extends State<VolunteerScreen> {
+  final List _volunteers = [...VolunteerModel.volunteers];
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +29,21 @@ class VolunteerScreen extends StatelessWidget {
           SliverPadding(
             padding: const EdgeInsets.only(left: 16, right: 16, bottom: 76),
             sliver: SliverList.builder(
-              itemCount: VolunteerModel.volunteers.length,
+              itemCount: _volunteers.length,
               itemBuilder: (context, index) {
-                return VolunteerSummaryItem(
-                  volunteer: VolunteerModel.volunteers[index],
+                return Dismissible(
+                  key: UniqueKey(),
+                  direction: DismissDirection.endToStart,
+                  confirmDismiss: (_) => confirmDeleteDialog(context),
+                  onDismissed: (_) {
+                    setState(() {
+                      _volunteers.removeAt(index);
+                    });
+                  },
+                  background: const DismissibleBackground(),
+                  child: VolunteerSummaryItem(
+                    volunteer: _volunteers[index],
+                  ),
                 );
               },
             ),

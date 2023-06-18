@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../ui/molecules/confirm_delete_dialog_box.dart';
+import '../../../ui/molecules/dismissible_background.dart';
 import '../../../ui/molecules/sliver_header_item.dart';
 import '../models/ngo_model.dart';
 import '../widgets/ngo_summary_widget.dart';
 
-class NGOScreen extends StatelessWidget {
+class NGOScreen extends StatefulWidget {
   const NGOScreen({super.key});
+
+  @override
+  State<NGOScreen> createState() => _NGOScreenState();
+}
+
+class _NGOScreenState extends State<NGOScreen> {
+  final List _ngos = [...NGOModel.mockData];
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +26,21 @@ class NGOScreen extends StatelessWidget {
           SliverPadding(
             padding: const EdgeInsets.only(left: 16, right: 16, bottom: 76),
             sliver: SliverList.builder(
-              itemCount: NGOModel.mockData.length,
+              itemCount: _ngos.length,
               itemBuilder: (context, index) {
-                return NGOSummaryWidget(
-                  ngo: NGOModel.mockData[index],
+                return Dismissible(
+                  key: UniqueKey(),
+                  direction: DismissDirection.endToStart,
+                  confirmDismiss: (_) => confirmDeleteDialog(context),
+                  onDismissed: (_) {
+                    setState(() {
+                      _ngos.removeAt(index);
+                    });
+                  },
+                  background: const DismissibleBackground(),
+                  child: NGOSummaryWidget(
+                    ngo: _ngos[index],
+                  ),
                 );
               },
             ),

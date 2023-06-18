@@ -22,7 +22,7 @@ class VolunteerModel {
   // volunteer mock data
   static final volunteers = [
     VolunteerModel(
-      fullName: 'Jayesh Patil',
+      fullName: 'Jayesh Patil 1',
       photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
@@ -32,7 +32,7 @@ class VolunteerModel {
       gender: 'Male',
     ),
     VolunteerModel(
-      fullName: 'Jayesh Patil',
+      fullName: 'Jayesh Patil 2',
       photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',

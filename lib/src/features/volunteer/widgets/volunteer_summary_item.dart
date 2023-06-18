@@ -18,7 +18,7 @@ class VolunteerSummaryItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
       child: GlassMorphicItem(
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+        padding: const EdgeInsets.all(12),
         borderRadius: BorderRadius.circular(12),
         opacity: 0.2,
         blur: 8,

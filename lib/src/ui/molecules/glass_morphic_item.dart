@@ -13,6 +13,7 @@ class GlassMorphicItem extends StatelessWidget {
     this.enableBorder = false,
     this.borderRadius = BorderRadius.zero,
     this.padding = const EdgeInsets.all(0),
+    this.color = Colors.white,
   });
 
   final Widget child;
@@ -24,42 +25,15 @@ class GlassMorphicItem extends StatelessWidget {
   final bool enableBorder;
   final BorderRadius borderRadius;
   final EdgeInsetsGeometry padding;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
-    // return ClipRRect(
-    //   borderRadius: borderRadius,
-    //   child: BackdropFilter(
-    //     filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
-    //     child: Container(
-    //       padding: padding,
-    //       decoration: BoxDecoration(
-    //           color: Colors.white.withOpacity(opacity),
-    //           borderRadius: borderRadius,
-    //           border: enableBorder
-    //               ? Border.all(
-    //                   color: Colors.white.withOpacity(0.2),
-    //                   width: 1.5,
-    //                 )
-    //               : null,
-    //           boxShadow: [
-    //             // if (enableShadow)
-    //             //   BoxShadow(
-    //             //     blurRadius: blur,
-    //             //     spreadRadius: blur / 2,
-    //             //     color: const Color(0x3D333333),
-    //             //   ),
-    //           ]),
-    //       child: child,
-    //     ),
-    //   ),
-    // );
-
     return GlassContainer(
       height: height,
       width: width,
       blur: blur,
-      color: Colors.white.withOpacity(opacity),
+      color: color.withOpacity(opacity),
       shadowColor: enableShadow ? const Color(0x3D333333) : Colors.transparent,
       borderRadius: borderRadius,
       border: enableBorder
