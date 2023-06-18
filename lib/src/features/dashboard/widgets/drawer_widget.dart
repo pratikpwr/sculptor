@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/features/ngo/screens/add_ngo_screen.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/atoms/glass_divider.dart';
@@ -56,6 +57,32 @@ class DrawerWidget extends StatelessWidget {
             DrawerItem(
               icon: Icons.handshake_rounded,
               title: 'Volunteered',
+              onTap: () {},
+            ),
+            padding16,
+            const GlassDivider(),
+            padding16,
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Admin',
+                style: context.textTheme.bodyLarge,
+              ),
+            ),
+            padding12,
+            DrawerItem(
+              icon: Icons.account_balance_rounded,
+              title: 'Add NGOs',
+              onTap: () => context.pushScreen(const AddUpdateNGOScreen()),
+            ),
+            DrawerItem(
+              icon: Icons.calendar_month_rounded,
+              title: 'Add Events',
+              onTap: () {},
+            ),
+            DrawerItem(
+              icon: Icons.handshake_rounded,
+              title: 'Add Volunteers',
               onTap: () {},
             ),
             const Spacer(),

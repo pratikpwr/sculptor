@@ -10,4 +10,10 @@ extension ContextExtension on BuildContext {
   double get screenHeight => mediaQuery.size.height;
 
   double get screenWidth => mediaQuery.size.width;
+
+  void pushScreen(Widget screen) => Navigator.of(this).push(
+        MaterialPageRoute(
+          builder: (_) => screen,
+        ),
+      );
 }
