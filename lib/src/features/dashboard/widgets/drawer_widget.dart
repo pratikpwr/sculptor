@@ -6,6 +6,7 @@ import '../../../ui/atoms/glass_divider.dart';
 import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_morphic_item.dart';
 import '../../../ui/themes/colors.dart';
+import '../../volunteer/screens/add_volunteer_screen.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({super.key});
@@ -83,7 +84,7 @@ class DrawerWidget extends StatelessWidget {
             DrawerItem(
               icon: Icons.handshake_rounded,
               title: 'Add Volunteers',
-              onTap: () {},
+              onTap: () => context.pushScreen(const AddUpdateVolunteerScreen()),
             ),
             const Spacer(),
             Center(
