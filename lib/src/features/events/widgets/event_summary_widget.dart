@@ -21,98 +21,103 @@ class EventSummaryWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
       child: GlassMorphicItem(
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
         borderRadius: BorderRadius.circular(12),
         opacity: 0.2,
         blur: 8,
         enableBorder: true,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.network(
-                    event.image,
-                    height: 70,
-                    width: 80,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                padding12,
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        event.eventType.toUpperCase(),
-                        style: context.textTheme.labelMedium?.copyWith(
-                          color: AppColors.accentColor,
-                        ),
-                      ),
-                      padding4,
-                      Text(
-                        event.title,
-                        maxLines: 1,
-                        overflow: TextOverflow.fade,
-                        style: context.textTheme.titleMedium,
-                      ),
-                      padding4,
-                      Text(
-                        event.organizer,
-                        style: context.textTheme.bodySmall?.copyWith(
-                          color: AppColors.secondaryText,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+              ),
+              child: Image.network(
+                event.image,
+                height: 180,
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
             ),
-            padding16,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      event.startDate.ddMMM,
-                      style: context.textTheme.bodyLarge?.copyWith(
-                        color: AppColors.primaryText,
-                      ),
+            padding12,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    event.eventType.toUpperCase(),
+                    style: context.textTheme.labelMedium?.copyWith(
+                      color: AppColors.accentColor,
                     ),
-                    Text(
-                      'Start DateTime',
-                      style: context.textTheme.bodySmall?.copyWith(
-                        color: AppColors.secondaryText,
-                      ),
+                  ),
+                  Text(
+                    event.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.fade,
+                    style: context.textTheme.titleMedium,
+                  ),
+                  Text(
+                    event.organizer,
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: AppColors.secondaryText,
                     ),
-                  ],
-                ),
-                const VerticalGlassDivider(
-                  height: 36,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      event.endDate.ddMMM,
-                      style: context.textTheme.bodyLarge?.copyWith(
-                        color: AppColors.primaryText,
-                      ),
-                    ),
-                    Text(
-                      'End DateTime',
-                      style: context.textTheme.bodySmall?.copyWith(
-                        color: AppColors.secondaryText,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            )
+                  ),
+                ],
+              ),
+            ),
+            padding12,
+            _eventPeriod(context),
+            padding12,
           ],
         ),
       ),
+    );
+  }
+
+  Widget _eventPeriod(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: [
+            Text(
+              event.startDate.ddMMM,
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: AppColors.primaryText,
+              ),
+            ),
+            padding4,
+            Text(
+              event.startDate.hhmmA,
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: AppColors.primaryText,
+              ),
+            ),
+          ],
+        ),
+        const VerticalGlassDivider(
+          height: 36,
+        ),
+        Column(
+          children: [
+            Text(
+              event.endDate.ddMMM,
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: AppColors.primaryText,
+              ),
+            ),
+            padding4,
+            Text(
+              event.endDate.hhmmA,
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: AppColors.primaryText,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
