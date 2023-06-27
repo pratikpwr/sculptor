@@ -56,15 +56,25 @@ class NGOSummaryWidget extends StatelessWidget {
                           style: context.textTheme.titleMedium,
                         ),
                         padding12,
-                        UserAndNumberItem(
-                          name: 'Sanjay Kumar',
-                          number: '9876543210',
-                        ),
-                        padding8,
-                        UserAndNumberItem(
-                          name: 'Kiran Modi',
-                          number: '9876543210',
-                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 8.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              UserAndNumberItem(
+                                name: 'Sanjay Kumar',
+                                number: '9876543210',
+                              ),
+                              padding8,
+                              UserAndNumberItem(
+                                name: 'Kiran Modi',
+                                number: '9876543210',
+                              ),
+                            ],
+                          ),
+                        )
+
                       ],
                     ),
                   ),

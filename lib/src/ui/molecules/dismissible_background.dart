@@ -18,7 +18,7 @@ class DismissibleBackground extends StatelessWidget {
         padding: const EdgeInsets.only(right: 16),
         borderRadius: BorderRadius.circular(12),
         blur: 10,
-        color: Colors.red,
+        color: Colors.red.shade200,
         opacity: 0.3,
         child: const Align(
           alignment: Alignment.centerRight,
