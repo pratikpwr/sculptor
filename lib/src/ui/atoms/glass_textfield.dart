@@ -18,6 +18,7 @@ class GlassTextField extends StatelessWidget {
     this.inputFormatters,
     this.maxLines,
     this.prefixIcon,
+    this.textAlignVertical,
   });
 
   final TextEditingController? controller;
@@ -29,6 +30,7 @@ class GlassTextField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final int? maxLines;
   final Widget? prefixIcon;
+  final TextAlignVertical? textAlignVertical;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +57,7 @@ class GlassTextField extends StatelessWidget {
             style: context.textTheme.bodyMedium?.copyWith(
               color: AppColors.primaryText,
             ),
-            textAlignVertical: TextAlignVertical.center,
+            textAlignVertical: textAlignVertical,
             decoration: InputDecoration(
               hintText: hintText,
               hintStyle: context.textTheme.bodySmall?.copyWith(

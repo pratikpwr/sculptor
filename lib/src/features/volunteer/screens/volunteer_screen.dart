@@ -33,6 +33,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                 hintText: 'Search',
                 prefixIcon: Icon(Icons.search),
                 maxLines: 1,
+                textAlignVertical: TextAlignVertical.center,
               ),
             ),
           ),
