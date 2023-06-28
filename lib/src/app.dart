@@ -15,6 +15,9 @@ class SculptorApp extends StatelessWidget {
         textTheme: textTheme.apply(
           bodyColor: AppColors.primaryText,
         ),
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: AppColors.primaryText),
+        ),
       ),
       debugShowCheckedModeBanner: false,
       home: const DashBoardScreen(),

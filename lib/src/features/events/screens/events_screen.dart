@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/molecules/confirm_delete_dialog_box.dart';
 import '../../../ui/molecules/dismissible_background.dart';
+import '../../../ui/molecules/floating_action_button_item.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
 import '../models/event_model.dart';
 import '../widgets/event_summary_widget.dart';
@@ -21,6 +22,10 @@ class _EventsScreenState extends State<EventsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
+      floatingActionButton: FloatingActionButtonItem(
+        onTap: () {},
+        icon: Icons.add_rounded,
+      ),
       body: CustomScrollView(
         slivers: [
           const SliverAppBarItem(

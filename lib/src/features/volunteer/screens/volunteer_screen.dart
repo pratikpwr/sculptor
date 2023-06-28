@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/ui/molecules/floating_action_button_item.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/atoms/glass_textfield.dart';
@@ -7,6 +8,7 @@ import '../../../ui/molecules/dismissible_background.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
 import '../models/volunteer_model.dart';
 import '../widgets/volunteer_summary_item.dart';
+import 'add_volunteer_screen.dart';
 
 class VolunteerScreen extends StatefulWidget {
   const VolunteerScreen({Key? key}) : super(key: key);
@@ -22,6 +24,10 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
+      floatingActionButton: FloatingActionButtonItem(
+        onTap: () => context.pushScreen(const AddUpdateVolunteerScreen()),
+        icon: Icons.add_rounded,
+      ),
       body: CustomScrollView(
         slivers: [
           const SliverAppBarItem(

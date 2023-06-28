@@ -67,6 +67,7 @@ class GlassTextField extends StatelessWidget {
               contentPadding: const EdgeInsets.symmetric(horizontal: 16),
               prefixIcon: prefixIcon,
             ),
+            onTapOutside: (_) => FocusScope.of(context).unfocus(),
           ),
         ),
       ],

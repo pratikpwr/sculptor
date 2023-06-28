@@ -27,7 +27,10 @@ class AddUpdateVolunteerScreen extends StatelessWidget {
             Expanded(
               child: CustomScrollView(
                 slivers: [
-                  const SliverAppBarItem(title: 'Add Volunteer'),
+                  const SliverAppBarItem(
+                    title: 'Add Volunteer',
+                    centerTitle: false,
+                  ),
                   SliverPadding(
                     padding: const EdgeInsets.only(
                       left: 16,

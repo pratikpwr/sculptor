@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/molecules/confirm_delete_dialog_box.dart';
 import '../../../ui/molecules/dismissible_background.dart';
+import '../../../ui/molecules/floating_action_button_item.dart';
 import '../../../ui/molecules/sliver_header_item.dart';
 import '../models/ngo_model.dart';
 import '../widgets/ngo_summary_widget.dart';
+import 'add_ngo_screen.dart';
 
 class NGOScreen extends StatefulWidget {
   const NGOScreen({super.key});
@@ -21,6 +23,10 @@ class _NGOScreenState extends State<NGOScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
+      floatingActionButton: FloatingActionButtonItem(
+        onTap: () => context.pushScreen(const AddUpdateNGOScreen()),
+        icon: Icons.add_rounded,
+      ),
       body: CustomScrollView(
         slivers: [
           const SliverHeaderItem(),

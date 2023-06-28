@@ -16,4 +16,6 @@ extension ContextExtension on BuildContext {
           builder: (_) => screen,
         ),
       );
+
+  void popScreen() => Navigator.of(this).pop();
 }
