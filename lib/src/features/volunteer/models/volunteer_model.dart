@@ -23,7 +23,7 @@ class VolunteerModel {
   static final volunteers = [
     VolunteerModel(
       fullName: 'Jayesh Patil 1',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -33,7 +33,7 @@ class VolunteerModel {
     ),
     VolunteerModel(
       fullName: 'Jayesh Patil 2',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -43,7 +43,7 @@ class VolunteerModel {
     ),
     VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -53,7 +53,7 @@ class VolunteerModel {
     ),
     VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -62,7 +62,7 @@ class VolunteerModel {
       gender: 'Male',
     ),VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -72,7 +72,7 @@ class VolunteerModel {
     ),
     VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -81,7 +81,7 @@ class VolunteerModel {
       gender: 'Male',
     ),VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -91,7 +91,7 @@ class VolunteerModel {
     ),
     VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -101,7 +101,7 @@ class VolunteerModel {
     ),
     VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',
@@ -111,7 +111,7 @@ class VolunteerModel {
     ),
     VolunteerModel(
       fullName: 'Jayesh Patil',
-      photoUrl: 'https://media.licdn.com/dms/image/C5103AQHveG1WjkXnqg/profile-displayphoto-shrink_800_800/0/1583002290133?e=2147483647&v=beta&t=dEhVy5PnJHfYVFsmOdYbO4MRmwKuPonaVSzPG4WUDJY',
+      photoUrl: 'https://st2.depositphotos.com/1518767/8186/i/600/depositphotos_81864518-stock-photo-portrait-of-happy-smiling-man.jpg',
       mobileNo: '9876543210',
       address: 'More Vihar, Vimukt Colony, Nashik',
       bloodGroup: 'B+',

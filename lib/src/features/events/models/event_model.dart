@@ -9,7 +9,9 @@ class EventModel {
   final String address;
 
   final String description;
-  final String image;
+
+  final List<String> images;
+
   final String? eligibility;
 
   const EventModel({
@@ -20,7 +22,7 @@ class EventModel {
     required this.endDate,
     required this.address,
     required this.description,
-    required this.image,
+    required this.images,
     this.eligibility,
   });
 
@@ -35,7 +37,11 @@ class EventModel {
       address: 'Sun Enclave, JB road, Noida, UP',
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc aliquam aliquet. Sed vitae nisi eget nunc aliquam aliquet.',
-      image: 'https://picsum.photos/200/300',
+      images: [
+        'https://picsum.photos/300/500',
+        'https://picsum.photos/200/300',
+        'https://picsum.photos/400/600',
+      ],
       eligibility: '18+',
     ),
     EventModel(
@@ -47,7 +53,11 @@ class EventModel {
       address: 'Sun Enclave, JB road, Noida, UP',
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc aliquam aliquet. Sed vitae nisi eget nunc aliquam aliquet.',
-      image: 'https://picsum.photos/200/300',
+      images: [
+        'https://picsum.photos/300/500',
+        'https://picsum.photos/200/300',
+        'https://picsum.photos/400/600',
+      ],
       eligibility: '12+',
     ),
     EventModel(
@@ -59,7 +69,11 @@ class EventModel {
       address: 'Sun Enclave, JB road, Noida, UP',
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc aliquam aliquet. Sed vitae nisi eget nunc aliquam aliquet.',
-      image: 'https://picsum.photos/200/300',
+      images: [
+        'https://picsum.photos/300/500',
+        'https://picsum.photos/200/300',
+        'https://picsum.photos/400/600',
+      ],
       eligibility: '18+',
     ),
     EventModel(
@@ -71,7 +85,11 @@ class EventModel {
       address: 'Sun Enclave, JB road, Noida, UP',
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc aliquam aliquet. Sed vitae nisi eget nunc aliquam aliquet.',
-      image: 'https://picsum.photos/200/300',
+      images: [
+        'https://picsum.photos/300/500',
+        'https://picsum.photos/200/300',
+        'https://picsum.photos/400/600',
+      ],
       eligibility: '12+',
     ),
     EventModel(
@@ -83,7 +101,11 @@ class EventModel {
       address: 'Sun Enclave, JB road, Noida, UP',
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc aliquam aliquet. Sed vitae nisi eget nunc aliquam aliquet.',
-      image: 'https://picsum.photos/200/300',
+      images: [
+        'https://picsum.photos/300/500',
+        'https://picsum.photos/200/300',
+        'https://picsum.photos/400/600',
+      ],
       eligibility: '18+',
     ),
     EventModel(
@@ -95,7 +117,11 @@ class EventModel {
       address: 'Sun Enclave, JB road, Noida, UP',
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc aliquam aliquet. Sed vitae nisi eget nunc aliquam aliquet.',
-      image: 'https://picsum.photos/200/300',
+      images: [
+        'https://picsum.photos/300/500',
+        'https://picsum.photos/200/300',
+        'https://picsum.photos/400/600',
+      ],
       eligibility: '12+',
     ),
   ];

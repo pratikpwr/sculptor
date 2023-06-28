@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/features/events/widgets/event_images.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../core/extensions/datetime_extension.dart';
@@ -11,10 +12,12 @@ import '../models/event_model.dart';
 class EventSummaryWidget extends StatelessWidget {
   final EventModel event;
 
-  const EventSummaryWidget({
+  EventSummaryWidget({
     super.key,
     required this.event,
   });
+
+  final images = [''];
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +31,8 @@ class EventSummaryWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
-              ),
-              child: Image.network(
-                event.image,
-                height: 180,
-                width: double.infinity,
-                fit: BoxFit.fitWidth,
-              ),
+            EventImages(
+              images: event.images,
             ),
             padding12,
             Padding(
@@ -67,7 +61,7 @@ class EventSummaryWidget extends StatelessWidget {
                 ],
               ),
             ),
-            padding12,
+            padding6,
             _eventPeriod(context),
             padding12,
           ],

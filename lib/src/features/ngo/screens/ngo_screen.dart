@@ -54,7 +54,7 @@ class _NGOScreenState extends State<NGOScreen> {
           ),
           SliverToBoxAdapter(
               child: Text(
-            '${_ngos.length} NGOs',
+            'Total ${_ngos.length} NGOs',
             textAlign: TextAlign.center,
             style: context.textTheme.bodyLarge,
           )),

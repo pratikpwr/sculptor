@@ -18,7 +18,7 @@ class VolunteerSummaryItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
       child: GlassMorphicItem(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(8),
         borderRadius: BorderRadius.circular(12),
         opacity: 0.2,
         blur: 8,
@@ -60,6 +60,7 @@ class VolunteerSummaryItem extends StatelessWidget {
                   ),
                   padding4,
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Icon(
                         Icons.location_on,
@@ -67,9 +68,12 @@ class VolunteerSummaryItem extends StatelessWidget {
                         color: AppColors.accentColor,
                       ),
                       padding4,
-                      Text(
-                        volunteer.address,
-                        style: Theme.of(context).textTheme.bodySmall,
+                      Expanded(
+                        child: Text(
+                          volunteer.address,
+                          maxLines: 2,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
                       ),
                     ],
                   ),

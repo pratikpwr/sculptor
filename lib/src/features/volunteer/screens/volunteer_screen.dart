@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/core/extensions/context_extension.dart';
 
 import '../../../ui/molecules/confirm_delete_dialog_box.dart';
 import '../../../ui/molecules/dismissible_background.dart';
@@ -27,14 +28,20 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
             centerTitle: false,
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 76),
+            padding: const EdgeInsets.only(
+              left: 16,
+              right: 16,
+            ),
             sliver: SliverList.builder(
               itemCount: _volunteers.length,
               itemBuilder: (context, index) {
                 return Dismissible(
                   key: UniqueKey(),
                   direction: DismissDirection.endToStart,
-                  confirmDismiss: (_) => confirmDeleteDialog(context),
+                  confirmDismiss: (_) => confirmDeleteDialog(
+                    context,
+                    title: 'Delete Volunteer',
+                  ),
                   onDismissed: (_) {
                     setState(() {
                       _volunteers.removeAt(index);
@@ -47,6 +54,15 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                 );
               },
             ),
+          ),
+          SliverToBoxAdapter(
+              child: Text(
+            'Total ${_volunteers.length} Volunteers',
+            textAlign: TextAlign.center,
+            style: context.textTheme.bodyLarge,
+          )),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 80),
           ),
         ],
       ),
