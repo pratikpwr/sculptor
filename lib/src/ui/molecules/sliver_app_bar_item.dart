@@ -11,6 +11,7 @@ class SliverAppBarItem extends StatelessWidget {
     this.onTapIcon,
     this.centerTitle = true,
     this.actions = const [],
+    this.bottom,
   });
 
   final String title;
@@ -18,6 +19,7 @@ class SliverAppBarItem extends StatelessWidget {
   final VoidCallback? onTapIcon;
   final List<Widget> actions;
   final bool centerTitle;
+  final PreferredSizeWidget? bottom;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class SliverAppBarItem extends StatelessWidget {
               )
             : null,
         actions: actions,
+        bottom: bottom,
       ),
     );
   }

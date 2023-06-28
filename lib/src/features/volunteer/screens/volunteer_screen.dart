@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sculptor/src/core/extensions/context_extension.dart';
+import 'package:sculptor/src/ui/atoms/glass_textfield.dart';
 
 import '../../../ui/molecules/confirm_delete_dialog_box.dart';
 import '../../../ui/molecules/dismissible_background.dart';
@@ -26,6 +27,14 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
           const SliverAppBarItem(
             title: 'Volunteers',
             centerTitle: false,
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(48),
+              child: GlassTextField(
+                hintText: 'Search',
+                prefixIcon: Icon(Icons.search),
+                maxLines: 1,
+              ),
+            ),
           ),
           SliverPadding(
             padding: const EdgeInsets.only(

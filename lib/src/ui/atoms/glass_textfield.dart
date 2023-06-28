@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:sculptor/src/ui/themes/colors.dart';
 
 import '../../core/extensions/context_extension.dart';
-import 'padding.dart';
 import '../molecules/glass_morphic_item.dart';
+import 'padding.dart';
 
 class GlassTextField extends StatelessWidget {
   const GlassTextField({
@@ -17,6 +17,7 @@ class GlassTextField extends StatelessWidget {
     this.onEditingComplete,
     this.inputFormatters,
     this.maxLines,
+    this.prefixIcon,
   });
 
   final TextEditingController? controller;
@@ -27,6 +28,7 @@ class GlassTextField extends StatelessWidget {
   final Function()? onEditingComplete;
   final List<TextInputFormatter>? inputFormatters;
   final int? maxLines;
+  final Widget? prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +55,7 @@ class GlassTextField extends StatelessWidget {
             style: context.textTheme.bodyMedium?.copyWith(
               color: AppColors.primaryText,
             ),
+            textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
               hintText: hintText,
               hintStyle: context.textTheme.bodySmall?.copyWith(
@@ -60,6 +63,7 @@ class GlassTextField extends StatelessWidget {
               ),
               border: InputBorder.none,
               contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+              prefixIcon: prefixIcon,
             ),
           ),
         ),
