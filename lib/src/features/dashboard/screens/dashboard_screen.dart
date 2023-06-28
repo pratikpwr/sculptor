@@ -20,7 +20,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-  static  final List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     NGOScreen(),
     EventsScreen(),
     VolunteerScreen(),

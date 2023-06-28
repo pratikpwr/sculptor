@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/ui/atoms/padding.dart';
-import 'package:sculptor/src/ui/themes/colors.dart';
 
+import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_morphic_item.dart';
+import '../../../ui/themes/colors.dart';
 import '../models/volunteer_model.dart';
 
 class VolunteerSummaryItem extends StatelessWidget {

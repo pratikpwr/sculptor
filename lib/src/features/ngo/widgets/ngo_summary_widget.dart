@@ -74,7 +74,6 @@ class NGOSummaryWidget extends StatelessWidget {
                             ],
                           ),
                         )
-
                       ],
                     ),
                   ),

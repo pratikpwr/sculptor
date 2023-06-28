@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/features/events/widgets/event_images.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../core/extensions/datetime_extension.dart';
@@ -8,6 +7,7 @@ import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_morphic_item.dart';
 import '../../../ui/themes/colors.dart';
 import '../models/event_model.dart';
+import 'event_images.dart';
 
 class EventSummaryWidget extends StatelessWidget {
   final EventModel event;

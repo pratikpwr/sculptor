@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/core/extensions/context_extension.dart';
-import 'package:sculptor/src/features/ngo/models/ngo_model.dart';
-import 'package:sculptor/src/ui/atoms/background_item.dart';
-import 'package:sculptor/src/ui/atoms/glass_divider.dart';
-import 'package:sculptor/src/ui/atoms/glass_textfield.dart';
-import 'package:sculptor/src/ui/molecules/sliver_app_bar_item.dart';
 
+import '../../../core/extensions/context_extension.dart';
+import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_button.dart';
+import '../../../ui/atoms/glass_divider.dart';
+import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_morphic_item.dart';
+import '../../../ui/molecules/sliver_app_bar_item.dart';
+import '../models/ngo_model.dart';
 
 class AddUpdateNGOScreen extends StatelessWidget {
   const AddUpdateNGOScreen({

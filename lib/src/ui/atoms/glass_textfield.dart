@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sculptor/src/ui/themes/colors.dart';
 
 import '../../core/extensions/context_extension.dart';
 import '../molecules/glass_morphic_item.dart';
+import '../themes/colors.dart';
 import 'padding.dart';
 
 class GlassTextField extends StatelessWidget {

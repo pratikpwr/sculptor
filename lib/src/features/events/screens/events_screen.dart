@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/core/extensions/context_extension.dart';
 
+import '../../../core/extensions/context_extension.dart';
 import '../../../ui/molecules/confirm_delete_dialog_box.dart';
 import '../../../ui/molecules/dismissible_background.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';

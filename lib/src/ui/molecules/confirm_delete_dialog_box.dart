@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/ui/atoms/glass_divider.dart';
-import 'package:sculptor/src/ui/themes/colors.dart';
 
 import '../../core/extensions/context_extension.dart';
+import '../atoms/glass_divider.dart';
 import '../atoms/padding.dart';
+import '../themes/colors.dart';
 import 'glass_morphic_item.dart';
 
 Future<bool?> confirmDeleteDialog(
@@ -11,7 +11,8 @@ Future<bool?> confirmDeleteDialog(
   String? title,
 }) =>
     showDialog<bool>(
-      context: context,barrierColor: Colors.black.withOpacity(0.1),
+      context: context,
+      barrierColor: Colors.black.withOpacity(0.1),
       builder: (context) => SizedBox(
         height: context.screenHeight,
         width: context.screenWidth,
@@ -24,7 +25,6 @@ Future<bool?> confirmDeleteDialog(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-
                 padding24,
                 Text(
                   title ?? 'Delete',
@@ -47,7 +47,10 @@ Future<bool?> confirmDeleteDialog(
                         },
                         child: Text(
                           'NO',
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.accentColor),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.copyWith(color: AppColors.accentColor),
                         ),
                       ),
                       const VerticalGlassDivider(),
@@ -57,7 +60,10 @@ Future<bool?> confirmDeleteDialog(
                         },
                         child: Text(
                           'YES',
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.accentColor),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.copyWith(color: AppColors.accentColor),
                         ),
                       ),
                     ],
