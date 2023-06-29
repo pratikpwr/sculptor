@@ -24,10 +24,11 @@ class FloatingActionButtonItem extends StatelessWidget {
           width: 56,
           height: 56,
           blur: 16,
-          opacity: 0.5,
+          opacity: 0.8,
           enableShadow: true,
           color: AppColors.accentColor,
-          child:  Icon(
+          shadowColor: Colors.black38,
+          child: Icon(
             icon,
             size: 28,
             color: Colors.white,

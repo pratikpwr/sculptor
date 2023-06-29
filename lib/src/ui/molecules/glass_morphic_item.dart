@@ -14,6 +14,7 @@ class GlassMorphicItem extends StatelessWidget {
     this.borderRadius = BorderRadius.zero,
     this.padding = const EdgeInsets.all(0),
     this.color = Colors.white,
+    this.shadowColor = const Color(0x3D333333),
   });
 
   final Widget child;
@@ -22,6 +23,7 @@ class GlassMorphicItem extends StatelessWidget {
   final double blur;
   final double opacity;
   final bool enableShadow;
+  final Color shadowColor;
   final bool enableBorder;
   final BorderRadius borderRadius;
   final EdgeInsetsGeometry padding;
@@ -34,7 +36,7 @@ class GlassMorphicItem extends StatelessWidget {
       width: width,
       blur: blur,
       color: color.withOpacity(opacity),
-      shadowColor: enableShadow ? const Color(0x3D333333) : Colors.transparent,
+      shadowColor: enableShadow ? shadowColor : Colors.transparent,
       borderRadius: borderRadius,
       border: enableBorder
           ? Border.all(
