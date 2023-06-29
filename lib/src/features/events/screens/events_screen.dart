@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/features/events/screens/add_event_screen.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../ui/molecules/confirm_delete_dialog_box.dart';
@@ -23,7 +24,7 @@ class _EventsScreenState extends State<EventsScreen> {
     return Scaffold(
       backgroundColor: Colors.transparent,
       floatingActionButton: FloatingActionButtonItem(
-        onTap: () {},
+        onTap: () => context.pushScreen(const AddUpdateEventScreen()),
         icon: Icons.add_rounded,
       ),
       body: CustomScrollView(
