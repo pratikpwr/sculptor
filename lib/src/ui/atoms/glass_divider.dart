@@ -6,15 +6,17 @@ class GlassDivider extends StatelessWidget {
   const GlassDivider({
     super.key,
     this.height = 1,
+    this.width = double.infinity,
   });
 
   final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return GlassMorphicItem(
       height: height,
-      width: double.infinity,
+      width: width,
       child: const SizedBox.shrink(),
     );
   }
