@@ -47,18 +47,23 @@ class StepperItem extends StatelessWidget {
                         ),
                         padding4,
                       ],
-                      GlassMorphicItem(
-                        width: 40,
-                        height: 40,
-                        borderRadius: BorderRadius.circular(20),
-                        color: currentStep == index
-                            ? AppColors.accentColor
-                            : Colors.white,
-                        opacity: currentStep == index ? 0.7 : 0.4,
-                        child: Center(
-                          child: Text(
-                            '${index + 1}',
-                            style: context.textTheme.bodyLarge,
+                      GestureDetector(
+                        onTap: () {
+                          onStepChange(index);
+                        },
+                        child: GlassMorphicItem(
+                          width: 40,
+                          height: 40,
+                          borderRadius: BorderRadius.circular(20),
+                          color: currentStep == index
+                              ? AppColors.accentColor
+                              : Colors.white,
+                          opacity: currentStep == index ? 0.7 : 0.4,
+                          child: Center(
+                            child: Text(
+                              '${index + 1}',
+                              style: context.textTheme.bodyLarge,
+                            ),
                           ),
                         ),
                       ),
