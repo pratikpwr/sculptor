@@ -62,7 +62,11 @@ class StepperItem extends StatelessWidget {
                           child: Center(
                             child: Text(
                               '${index + 1}',
-                              style: context.textTheme.bodyLarge,
+                              style: context.textTheme.bodyLarge?.copyWith(
+                                color: currentStep == index
+                                    ? Colors.white
+                                    : AppColors.primaryText,
+                              ),
                             ),
                           ),
                         ),
