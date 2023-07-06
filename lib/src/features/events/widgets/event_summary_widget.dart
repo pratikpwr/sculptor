@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../core/extensions/datetime_extension.dart';
-import '../../../ui/atoms/glass_divider.dart';
 import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_morphic_item.dart';
 import '../../../ui/themes/colors.dart';
@@ -12,12 +11,10 @@ import 'event_images.dart';
 class EventSummaryWidget extends StatelessWidget {
   final EventModel event;
 
-  EventSummaryWidget({
+  const EventSummaryWidget({
     super.key,
     required this.event,
   });
-
-  final images = [''];
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +28,28 @@ class EventSummaryWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            EventImages(
-              images: event.images,
+            Stack(
+              children: [
+                EventImages(
+                  images: event.images,
+                ),
+                Positioned(
+                  top: 16,
+                  child: Container(
+                    height: 32,
+                    width: 80,
+                    color: AppColors.accentColor.withOpacity(0.8),
+                    child: Text(),
+                  ),
+                )
+              ],
             ),
-            padding12,
+            padding8,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    event.eventType.toUpperCase(),
-                    style: context.textTheme.labelMedium?.copyWith(
-                      color: AppColors.accentColor,
-                    ),
-                  ),
                   Text(
                     event.title,
                     maxLines: 1,
@@ -61,7 +65,7 @@ class EventSummaryWidget extends StatelessWidget {
                 ],
               ),
             ),
-            padding6,
+            padding8,
             _eventPeriod(context),
             padding12,
           ],
@@ -74,37 +78,30 @@ class EventSummaryWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Column(
+        Row(
           children: [
-            Text(
-              event.startDate.ddMMM,
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: AppColors.primaryText,
-              ),
+            const Icon(
+              Icons.calendar_month_rounded,
+              size: 22,
             ),
             padding4,
             Text(
-              event.startDate.hhmmA,
+              "${event.startDate.ddMMM} - ${event.endDate.ddMMMyy}",
               style: context.textTheme.bodyMedium?.copyWith(
                 color: AppColors.primaryText,
               ),
             ),
           ],
         ),
-        const VerticalGlassDivider(
-          height: 36,
-        ),
-        Column(
+        Row(
           children: [
-            Text(
-              event.endDate.ddMMM,
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: AppColors.primaryText,
-              ),
+            const Icon(
+              Icons.watch_later_outlined,
+              size: 22,
             ),
             padding4,
             Text(
-              event.endDate.hhmmA,
+              "${event.startDate.hhmmA} to ${event.endDate.hhmmA}",
               style: context.textTheme.bodyMedium?.copyWith(
                 color: AppColors.primaryText,
               ),

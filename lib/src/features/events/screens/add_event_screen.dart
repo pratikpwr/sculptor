@@ -8,7 +8,7 @@ import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_morphic_item.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
-import '../models/Event_model.dart';
+import '../models/event_model.dart';
 
 class AddUpdateEventScreen extends StatelessWidget {
   const AddUpdateEventScreen({
