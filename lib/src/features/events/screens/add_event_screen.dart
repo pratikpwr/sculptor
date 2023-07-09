@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/extensions/context_extension.dart';
 import '../../../ui/atoms/background_item.dart';
-import '../../../ui/atoms/glass_button.dart';
-import '../../../ui/atoms/glass_divider.dart';
 import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
-import '../../../ui/molecules/glass_morphic_item.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
 import '../../../ui/organisms/stepper_item.dart';
 import '../models/event_model.dart';
@@ -33,7 +29,6 @@ class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
         body: CustomScrollView(
           slivers: [
             const SliverAppBarItem(title: 'Add Event'),
-
             SliverFillRemaining(
               child: StepperItem(
                 currentStep: currentStep,
@@ -44,11 +39,7 @@ class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
                 },
                 onSubmit: () {},
                 onCancel: () {},
-                headings: const [
-                  'Event Details',
-                  'Address',
-                  'Date and Time'
-                ],
+                headings: const ['Event Details', 'Address', 'Date and Time'],
                 items: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
