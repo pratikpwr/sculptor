@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/core/extensions/context_extension.dart';
+import 'package:sculptor/src/ui/molecules/glass_date_picker_field.dart';
+import 'package:sculptor/src/ui/molecules/glass_time_picker_field.dart';
 
 import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_textfield.dart';
@@ -21,6 +24,11 @@ class AddUpdateEventScreen extends StatefulWidget {
 
 class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
   int currentStep = 0;
+
+  DateTime? startDate;
+  DateTime? endDate;
+  TimeOfDay? startTime;
+  TimeOfDay? endTime;
 
   @override
   Widget build(BuildContext context) {
@@ -89,17 +97,57 @@ class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      GlassTextField(
-                        controller: TextEditingController(),
-                        hintText: 'Select Date & Time',
-                        labelText: 'Start Date & Time',
+                      Text(
+                        'Start Date and Time',
+                        style: context.textTheme.bodyLarge,
+                      ),
+                      padding8,
+                      GlassDatePickerField(
+                        hintText: 'Select Start Date',
+                        labelText: 'Start Date',
+                        value: startDate,
+                        onChanged: (value) {
+                          setState(() {
+                            startDate = value;
+                          });
+                        },
                       ),
                       padding12,
-                      GlassTextField(
-                        controller: TextEditingController(),
-                        hintText: 'Select Date & Time',
-                        labelText: 'End Date & Time',
+                      GlassTimePickerField(
+                          value: startTime,
+                          onChanged: (value) {
+                            setState(() {
+                              startTime = value;
+                            });
+                          },
+                          labelText: 'Start Time',
+                          hintText: 'Select Start Time'),
+                      padding16,
+                      Text(
+                        'End Date and Time',
+                        style: context.textTheme.bodyLarge,
                       ),
+                      padding8,
+                      GlassDatePickerField(
+                        hintText: 'Select Date',
+                        labelText: 'End Date',
+                        value: endDate,
+                        onChanged: (value) {
+                          setState(() {
+                            endDate = value;
+                          });
+                        },
+                      ),
+                      padding12,
+                      GlassTimePickerField(
+                          value: endTime,
+                          onChanged: (value) {
+                            setState(() {
+                              endTime = value;
+                            });
+                          },
+                          labelText: 'End Time',
+                          hintText: 'Select End Time'),
                     ],
                   )
                 ],
