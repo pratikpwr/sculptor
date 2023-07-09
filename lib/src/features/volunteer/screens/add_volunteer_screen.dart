@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/extensions/context_extension.dart';
 import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
@@ -44,6 +43,11 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
                 },
                 onSubmit: () {},
                 onCancel: () {},
+                headings: const [
+                  'Volunteer Details',
+                  'Personal Details',
+                  'Address',
+                ],
                 items: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,9 +74,6 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Personal Details',
-                          style: context.textTheme.titleMedium),
-                      padding8,
                       GlassTextField(
                         controller: TextEditingController(),
                         hintText: 'Enter Date of Birth',
@@ -95,8 +96,6 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Address', style: context.textTheme.titleMedium),
-                      padding8,
                       GlassTextField(
                         controller: TextEditingController(),
                         hintText: 'Enter house number/name, area',

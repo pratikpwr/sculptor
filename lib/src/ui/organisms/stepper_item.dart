@@ -11,6 +11,7 @@ class StepperItem extends StatelessWidget {
   const StepperItem({
     super.key,
     required this.currentStep,
+    required this.headings,
     required this.items,
     required this.onSubmit,
     required this.onStepChange,
@@ -18,6 +19,7 @@ class StepperItem extends StatelessWidget {
   });
 
   final int currentStep;
+  final List<String> headings;
   final List<Widget> items;
   final Function(int) onStepChange;
   final VoidCallback onSubmit;
@@ -28,7 +30,7 @@ class StepperItem extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 40,
+          height: 82,
           child: ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
@@ -41,9 +43,16 @@ class StepperItem extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (index != 0) ...[
-                        const GlassDivider(
-                          width: 32,
-                          height: 2,
+                        const Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            GlassDivider(
+                              width: 48,
+                              height: 2.5,
+                            ),
+                          ],
                         ),
                         padding4,
                       ],
@@ -51,24 +60,43 @@ class StepperItem extends StatelessWidget {
                         onTap: () {
                           onStepChange(index);
                         },
-                        child: GlassMorphicItem(
-                          width: 40,
-                          height: 40,
-                          borderRadius: BorderRadius.circular(20),
-                          color: currentStep == index
-                              ? AppColors.accentColor
-                              : Colors.white,
-                          opacity: currentStep == index ? 0.7 : 0.4,
-                          child: Center(
-                            child: Text(
-                              '${index + 1}',
-                              style: context.textTheme.bodyLarge?.copyWith(
-                                color: currentStep == index
-                                    ? Colors.white
-                                    : AppColors.primaryText,
+                        child: Column(
+                          children: [
+                            GlassMorphicItem(
+                              width: 40,
+                              height: 40,
+                              borderRadius: BorderRadius.circular(20),
+                              color: currentStep == index
+                                  ? AppColors.accentColor
+                                  : Colors.white,
+                              opacity: currentStep == index ? 0.7 : 0.4,
+                              child: Center(
+                                child: Text(
+                                  '${index + 1}',
+                                  style: context.textTheme.bodyLarge?.copyWith(
+                                    color: currentStep == index
+                                        ? Colors.white
+                                        : AppColors.primaryText,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                            padding4,
+                            SizedBox(
+                              width: 72,
+                              child: Text(
+                                headings[index],
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                  color: currentStep == index
+                                      ? AppColors.accentColor
+                                      : AppColors.primaryText,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -76,13 +104,22 @@ class StepperItem extends StatelessWidget {
                 );
               }),
         ),
-        padding20,
+        padding12,
         Expanded(
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(
-              horizontal: 16,
+              horizontal: 8,
             ),
-            child: items[currentStep],
+            child: GlassMorphicItem(
+              borderRadius: BorderRadius.circular(12),
+              opacity: 0.3,
+              blur: 8,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12,
+                vertical: 16,
+              ),
+              child: items[currentStep],
+            ),
           ),
         ),
         GlassMorphicItem(
