@@ -18,7 +18,9 @@ class GlassTextField extends StatelessWidget {
     this.inputFormatters,
     this.maxLines,
     this.prefixIcon,
+    this.suffixIcon,
     this.textAlignVertical,
+    this.enabled = true,
   });
 
   final TextEditingController? controller;
@@ -30,7 +32,9 @@ class GlassTextField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final int? maxLines;
   final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final TextAlignVertical? textAlignVertical;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +52,7 @@ class GlassTextField extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: maxLines != null ? 4 : 0),
           enableBorder: true,
           child: TextFormField(
+            enabled: enabled,
             controller: controller,
             keyboardType: keyboardType,
             onChanged: onChanged,
@@ -66,6 +71,7 @@ class GlassTextField extends StatelessWidget {
               border: InputBorder.none,
               contentPadding: const EdgeInsets.symmetric(horizontal: 16),
               prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
             ),
             onTapOutside: (_) => FocusScope.of(context).unfocus(),
           ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
+import '../../../ui/molecules/glass_date_picker_field.dart';
 import '../../../ui/molecules/glass_dropdown.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
 import '../../../ui/organisms/stepper_item.dart';
@@ -23,8 +24,10 @@ class AddUpdateVolunteerScreen extends StatefulWidget {
 
 class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
   int currentStep = 0;
+
   String? gender;
   String? bloodGroup;
+  DateTime? dateOfBirth;
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +80,15 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      GlassTextField(
-                        controller: TextEditingController(),
+                      GlassDatePickerField(
                         hintText: 'Enter Date of Birth',
                         labelText: 'Date of Birth',
+                        value: dateOfBirth,
+                        onChanged: (value) {
+                          setState(() {
+                            dateOfBirth = value;
+                          });
+                        },
                       ),
                       padding12,
                       GlassDropDown(
