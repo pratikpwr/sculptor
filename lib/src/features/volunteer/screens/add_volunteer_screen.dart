@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../../ui/atoms/background_item.dart';
@@ -6,6 +8,7 @@ import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/glass_date_picker_field.dart';
 import '../../../ui/molecules/glass_dropdown.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
+import '../../../ui/organisms/image_selector_item.dart';
 import '../../../ui/organisms/stepper_item.dart';
 import '../models/volunteer_model.dart';
 
@@ -28,6 +31,8 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
   String? gender;
   String? bloodGroup;
   DateTime? dateOfBirth;
+
+  List<File> images = [];
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +67,22 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
                         controller: TextEditingController(),
                         labelText: 'Volunteer Name',
                         hintText: 'Enter Volunteer Name',
+                      ),
+                      padding12,
+                      ImageSelectorItem(
+                        label: 'Volunteer Image',
+                        images: images,
+                        maxImages: 1,
+                        onImageAdded: (image) {
+                          setState(() {
+                            images.add(image);
+                          });
+                        },
+                        onImageRemoved: (index) {
+                          setState(() {
+                            images.removeAt(index);
+                          });
+                        },
                       ),
                       padding12,
                       GlassTextField(

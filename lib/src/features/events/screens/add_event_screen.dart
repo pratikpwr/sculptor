@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:sculptor/src/core/extensions/context_extension.dart';
 import 'package:sculptor/src/ui/molecules/glass_date_picker_field.dart';
@@ -7,6 +9,7 @@ import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
+import '../../../ui/organisms/image_selector_item.dart';
 import '../../../ui/organisms/stepper_item.dart';
 import '../models/event_model.dart';
 
@@ -29,6 +32,8 @@ class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
   DateTime? endDate;
   TimeOfDay? startTime;
   TimeOfDay? endTime;
+
+  List<File> images = [];
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +74,21 @@ class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
                         controller: TextEditingController(),
                         hintText: 'Enter event eligibility',
                         labelText: 'Eligibility',
+                      ),
+                      padding12,
+                      ImageSelectorItem(
+                        label: 'Event Images',
+                        images: images,
+                        onImageAdded: (image) {
+                          setState(() {
+                            images.add(image);
+                          });
+                        },
+                        onImageRemoved: (index) {
+                          setState(() {
+                            images.removeAt(index);
+                          });
+                        },
                       ),
                     ],
                   ),

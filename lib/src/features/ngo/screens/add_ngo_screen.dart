@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:sculptor/src/ui/organisms/image_selector_item.dart';
 
 import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_textfield.dart';
@@ -22,6 +25,8 @@ class AddUpdateNGOScreen extends StatefulWidget {
 class _AddUpdateNGOScreenState extends State<AddUpdateNGOScreen> {
   int currentStep = 0;
 
+  List<File> images = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,11 +44,7 @@ class _AddUpdateNGOScreenState extends State<AddUpdateNGOScreen> {
                 },
                 onSubmit: () {},
                 onCancel: () {},
-                headings: const [
-                  'NGO Details',
-                  'Address',
-                  'Manager Details'
-                ],
+                headings: const ['NGO Details', 'Address', 'Manager Details'],
                 items: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,6 +60,21 @@ class _AddUpdateNGOScreenState extends State<AddUpdateNGOScreen> {
                         hintText: 'Enter NGO Description',
                         labelText: 'NGO Description',
                         maxLines: 4,
+                      ),
+                      padding12,
+                      ImageSelectorItem(
+                        label: 'NGO Images',
+                        images: images,
+                        onImageAdded: (image) {
+                          setState(() {
+                            images.add(image);
+                          });
+                        },
+                        onImageRemoved: (index) {
+                          setState(() {
+                            images.removeAt(index);
+                          });
+                        },
                       ),
                     ],
                   ),
