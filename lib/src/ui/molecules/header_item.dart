@@ -4,8 +4,8 @@ import '../../core/extensions/context_extension.dart';
 import '../themes/colors.dart';
 import 'glass_morphic_item.dart';
 
-class SliverHeaderItem extends StatelessWidget {
-  const SliverHeaderItem({
+class HeaderItem extends StatelessWidget {
+  const HeaderItem({
     super.key,
     required this.currentIndex,
     required this.onChanged,
@@ -19,36 +19,28 @@ class SliverHeaderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
-      sliver: SliverAppBar(
-        title: GlassMorphicItem(
-          blur: 15,
-          enableShadow: false,
-          padding: const EdgeInsets.all(4),
-          borderRadius: BorderRadius.circular(8),
-          enableBorder: true,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: List.generate(
-              items.length,
-              (index) => GestureDetector(
-                onTap: () => onChanged(index),
-                child: HeaderItemTile(
-                  title: items[index],
-                  isSelected: currentIndex == index,
-                ),
+    return Container(
+      width: context.screenWidth,
+      alignment: Alignment.center,
+      child: GlassMorphicItem(
+        blur: 15,
+        enableShadow: false,
+        padding: const EdgeInsets.all(4),
+        borderRadius: BorderRadius.circular(8),
+        enableBorder: true,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: List.generate(
+            items.length,
+            (index) => GestureDetector(
+              onTap: () => onChanged(index),
+              child: HeaderItemTile(
+                title: items[index],
+                isSelected: currentIndex == index,
               ),
             ),
           ),
         ),
-        pinned: false,
-        snap: false,
-        floating: true,
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: true,
-        shadowColor: Colors.transparent,
       ),
     );
   }

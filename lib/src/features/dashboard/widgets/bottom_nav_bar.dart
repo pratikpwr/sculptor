@@ -19,7 +19,8 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassMorphicItem(
       height: 64,
-      blur: 8,
+      blur: 10,
+      opacity: 0.8,
       borderRadius: BorderRadius.circular(30),
       enableShadow: false,
       child: Padding(

@@ -1,12 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:sculptor/src/ui/organisms/image_selector_item.dart';
 
 import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
+import '../../../ui/organisms/image_selector_item.dart';
 import '../../../ui/organisms/stepper_item.dart';
 import '../models/ngo_model.dart';
 

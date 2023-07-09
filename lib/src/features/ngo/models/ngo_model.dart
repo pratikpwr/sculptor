@@ -1,102 +1,177 @@
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'address_model.dart';
+
 class NGOModel {
+  final String id;
+
   final String name;
-  final String address;
+  final String description;
+
+  final AddressModel address;
+  final List<String> images;
+
   final String manager;
   final String managerPhone;
   final String deputyManager;
   final String deputyManagerPhone;
-  final String image;
 
   const NGOModel({
+    required this.id,
     required this.name,
+    required this.description,
     required this.address,
     required this.manager,
     required this.managerPhone,
     required this.deputyManager,
     required this.deputyManagerPhone,
-    required this.image,
+    required this.images,
   });
 
   static const mockData = [
     NGOModel(
+      id: "1",
       name: "Old Age Home Foundation",
-      address: "123 Main Street",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl.",
+      address: AddressModel(
+        lane1: "123 Main Street",
+        lane2: "Apt 1",
+        latLng: LatLng(
+          37.4171,
+          -122.01571,
+        ),
+        city: "San Francisco",
+        state: "California",
+        pinCode: "94103",
+      ),
       manager: "John Smith",
       managerPhone: "123-456-7890",
       deputyManager: "Jane Doe",
       deputyManagerPhone: "987-654-3210",
-      image:
-          "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      images: [
+        "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      ],
     ),
     NGOModel(
+      id: "2",
       name: "Self Help NGO",
-      address: "456 Elm Street",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl.",
       manager: "Mike Johnson",
       managerPhone: "555-555-5555",
       deputyManager: "Sarah Thompson",
       deputyManagerPhone: "999-999-9999",
-      image:
-          "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      address: AddressModel(
+        lane1: "456 Oak Street",
+        lane2: "Apt 2",
+        latLng: LatLng(
+          37.4272,
+          -122.02572,
+        ),
+        city: "San Francisco",
+        state: "California",
+        pinCode: "94103",
+      ),
+      images: [
+        "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      ],
     ),
     NGOModel(
+      id: "3",
       name: "NGO Three",
-      address: "789 Oak Avenue",
       manager: "Emily Brown",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl.",
       managerPhone: "111-222-3333",
       deputyManager: "David Wilson",
       deputyManagerPhone: "444-555-6666",
-      image:
-          "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      address: AddressModel(
+        lane1: "789 Pine Avenue",
+        lane2: "Apt 3",
+        latLng: LatLng(
+          37.4373,
+          -122.03573,
+        ),
+        city: "San Francisco",
+        state: "California",
+        pinCode: "94103",
+      ),
+      images: [
+        "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      ],
     ),
     NGOModel(
-      name: "Save Tree Fondation",
-      address: "321 Pine Road",
-      manager: "Alexandra Lee",
-      managerPhone: "777-888-9999",
-      deputyManager: "Christopher Davis",
-      deputyManagerPhone: "222-333-4444",
-      image:
-          "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
-    ),
-    NGOModel(
+      id: "4",
       name: "Kids Are Future",
-      address: "456 Elm Street",
       manager: "Mike Johnson",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl.",
       managerPhone: "555-555-5555",
       deputyManager: "Sarah Thompson",
       deputyManagerPhone: "999-999-9999",
-      image:
-          "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      address: AddressModel(
+        lane1: "456 Elm Street",
+        lane2: "Apt 4",
+        latLng: LatLng(
+          37.5274,
+          -122.18574,
+        ),
+        city: "San Francisco",
+        state: "California",
+        pinCode: "94103",
+      ),
+      images: [
+        "https://images-platform.99static.com//NnfsZfhWECwMKeuj4yxeInkbKN8=/0x126:874x1000/fit-in/500x500/99designs-contests-attachments/35/35657/attachment_35657633",
+      ],
     ),
     NGOModel(
+      id: "5",
       name: "NAAM Foundation",
-      address: "456 Elm Street",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl.",
       manager: "Mike Johnson",
       managerPhone: "555-555-5555",
       deputyManager: "Sarah Thompson",
       deputyManagerPhone: "999-999-9999",
-      image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzGUqSljUJsUnC_SEaXZ59OPH4EByobnEp-w&usqp=CAU",
+      images: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzGUqSljUJsUnC_SEaXZ59OPH4EByobnEp-w&usqp=CAU"
+      ],
+      address: AddressModel(
+        lane1: "456 Elm Street",
+        lane2: "Apt 4",
+        latLng: LatLng(
+          37.7275,
+          -122.48575,
+        ),
+        city: "San Francisco",
+        state: "California",
+        pinCode: "94103",
+      ),
     ),
     NGOModel(
+      id: "6",
       name: "NGO Three",
-      address: "789 Oak Avenue",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nisl nec nisl.",
       manager: "Emily Brown",
       managerPhone: "111-222-3333",
       deputyManager: "David Wilson",
       deputyManagerPhone: "444-555-6666",
-      image:
-          "https://static.vecteezy.com/system/resources/previews/015/277/729/original/social-organization-logo-social-community-logo-template-illustration-eps-10-free-vector.jpg",
-    ),
-    NGOModel(
-      name: "NGO Four",
-      address: "321 Pine Road",
-      manager: "Alexandra Lee",
-      managerPhone: "777-888-9999",
-      deputyManager: "Christopher Davis",
-      deputyManagerPhone: "222-333-4444",
-      image:
-          "https://www.shutterstock.com/image-vector/ngo-earth-planet-hands-palm-260nw-1867730668.jpg",
+      images: [
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzGUqSljUJsUnC_SEaXZ59OPH4EByobnEp-w&usqp=CAU'
+      ],
+      address: AddressModel(
+        lane1: "789 Pine Avenue",
+        lane2: "Apt 3",
+        latLng: LatLng(
+          38.42796,
+          -123.08576,
+        ),
+        city: "San Francisco",
+        state: "California",
+        pinCode: "94103",
+      ),
     ),
   ];
 }
