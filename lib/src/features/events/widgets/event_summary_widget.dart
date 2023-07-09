@@ -35,13 +35,38 @@ class EventSummaryWidget extends StatelessWidget {
                 ),
                 Positioned(
                   top: 16,
-                  child: Container(
-                    height: 32,
-                    width: 80,
-                    color: AppColors.accentColor.withOpacity(0.8),
-                    child: Text(),
+                  child: GlassMorphicItem(
+                    height: 36,
+                    width: 64,
+                    opacity: 0.4,
+                    blur: 8,
+                    color: AppColors.accentColor,
+
+                    child: Center(
+                      child: Text(
+                        '20 Days',
+                        style: context.textTheme.labelMedium
+                            ?.copyWith(color: Colors.white),
+                      ),
+                    ),
                   ),
-                )
+                ),
+                Positioned(
+                  top: 16,
+                  right: 16,
+                  child: GlassMorphicItem(
+                    opacity: 0.4,
+                    blur: 8,
+                    borderRadius: BorderRadius.circular(30),
+                    padding: const EdgeInsets.all(10),
+                    child: Center(
+                      child: Icon(
+                        Icons.favorite_border,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             padding8,
