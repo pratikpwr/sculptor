@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../ui/atoms/background_item.dart';
 import '../../../ui/atoms/glass_textfield.dart';
 import '../../../ui/atoms/padding.dart';
+import '../../../ui/molecules/glass_dropdown.dart';
 import '../../../ui/molecules/sliver_app_bar_item.dart';
 import '../../../ui/organisms/stepper_item.dart';
 import '../models/volunteer_model.dart';
@@ -22,6 +23,8 @@ class AddUpdateVolunteerScreen extends StatefulWidget {
 
 class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
   int currentStep = 0;
+  String? gender;
+  String? bloodGroup;
 
   @override
   Widget build(BuildContext context) {
@@ -80,16 +83,41 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
                         labelText: 'Date of Birth',
                       ),
                       padding12,
-                      GlassTextField(
-                        controller: TextEditingController(),
-                        hintText: 'Enter Gender',
+                      GlassDropDown(
                         labelText: 'Gender',
+                        hint: 'Select Gender',
+                        items: const [
+                          'Male',
+                          'Female',
+                          'Other',
+                        ],
+                        value: gender,
+                        onChanged: (value) {
+                          setState(() {
+                            gender = value;
+                          });
+                        },
                       ),
                       padding12,
-                      GlassTextField(
-                        controller: TextEditingController(),
-                        hintText: 'Enter Blood Group',
+                      GlassDropDown(
                         labelText: 'Blood Group',
+                        hint: 'Select Blood Group',
+                        items: const [
+                          'A+',
+                          'A-',
+                          'B+',
+                          'B-',
+                          'AB+',
+                          'AB-',
+                          'O+',
+                          'O-',
+                        ],
+                        value: bloodGroup,
+                        onChanged: (value) {
+                          setState(() {
+                            bloodGroup = value;
+                          });
+                        },
                       ),
                     ],
                   ),
