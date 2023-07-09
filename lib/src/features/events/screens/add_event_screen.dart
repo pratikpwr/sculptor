@@ -114,14 +114,15 @@ class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
                       ),
                       padding12,
                       GlassTimePickerField(
-                          value: startTime,
-                          onChanged: (value) {
-                            setState(() {
-                              startTime = value;
-                            });
-                          },
-                          labelText: 'Start Time',
-                          hintText: 'Select Start Time'),
+                        value: startTime,
+                        onChanged: (value) {
+                          setState(() {
+                            startTime = value;
+                          });
+                        },
+                        labelText: 'Start Time',
+                        hintText: 'Select Start Time',
+                      ),
                       padding16,
                       Text(
                         'End Date and Time',
@@ -140,14 +141,15 @@ class _AddUpdateEventScreenState extends State<AddUpdateEventScreen> {
                       ),
                       padding12,
                       GlassTimePickerField(
-                          value: endTime,
-                          onChanged: (value) {
-                            setState(() {
-                              endTime = value;
-                            });
-                          },
-                          labelText: 'End Time',
-                          hintText: 'Select End Time'),
+                        value: endTime,
+                        onChanged: (value) {
+                          setState(() {
+                            endTime = value;
+                          });
+                        },
+                        labelText: 'End Time',
+                        hintText: 'Select End Time',
+                      ),
                     ],
                   )
                 ],
