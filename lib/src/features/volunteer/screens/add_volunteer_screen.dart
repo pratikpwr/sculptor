@@ -12,6 +12,14 @@ import '../../../ui/organisms/image_selector_item.dart';
 import '../../../ui/organisms/stepper_item.dart';
 import '../models/volunteer_model.dart';
 
+
+class Gender {
+  final int id;
+  final String title;
+
+  Gender(this.id, this.title);
+}
+
 class AddUpdateVolunteerScreen extends StatefulWidget {
   const AddUpdateVolunteerScreen({
     super.key,
@@ -28,7 +36,7 @@ class AddUpdateVolunteerScreen extends StatefulWidget {
 class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
   int currentStep = 0;
 
-  String? gender;
+  Gender? gender;
   String? bloodGroup;
   DateTime? dateOfBirth;
 
@@ -112,19 +120,21 @@ class _AddUpdateVolunteerScreenState extends State<AddUpdateVolunteerScreen> {
                         },
                       ),
                       padding12,
-                      GlassDropDown(
+                      GlassDropDown<Gender>(
                         labelText: 'Gender',
                         hint: 'Select Gender',
-                        items: const [
-                          'Male',
-                          'Female',
-                          'Other',
+                        items:  [
+                          Gender(1, 'male'),
+                          Gender(2, 'female'),
                         ],
                         value: gender,
                         onChanged: (value) {
                           setState(() {
                             gender = value;
                           });
+                        },
+                        itemToString: (value){
+                          return value.title;
                         },
                       ),
                       padding12,
