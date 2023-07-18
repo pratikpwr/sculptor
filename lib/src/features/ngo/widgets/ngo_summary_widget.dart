@@ -51,17 +51,20 @@ class NGOSummaryWidget extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        GlassMorphicItem(
-                          borderRadius: BorderRadius.circular(12),
-                          opacity: 0.3,
-                          enableShadow: false,
-                          child: ClipRRect(
+                        Hero(
+                          tag: ngo.id,
+                          child: GlassMorphicItem(
                             borderRadius: BorderRadius.circular(12),
-                            child: Image.network(
-                              ngo.images.first,
-                              height: 160,
-                              width: 150,
-                              fit: BoxFit.fitHeight,
+                            opacity: 0.3,
+                            enableShadow: false,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.network(
+                                ngo.images.first,
+                                height: 160,
+                                width: 150,
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
                           ),
                         ),

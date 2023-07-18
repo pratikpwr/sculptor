@@ -4,10 +4,17 @@ import 'package:flutter/material.dart';
 
 class EventImages extends StatefulWidget {
   final List<String> images;
+  final double height;
+  final BorderRadius borderRadius;
 
   const EventImages({
     super.key,
+    this.height = 180,
     required this.images,
+    this.borderRadius = const BorderRadius.only(
+      topLeft: Radius.circular(12),
+      topRight: Radius.circular(12),
+    ),
   });
 
   @override
@@ -49,12 +56,9 @@ class _EventImagesState extends State<EventImages> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(12),
-        topRight: Radius.circular(12),
-      ),
+      borderRadius: widget.borderRadius,
       child: SizedBox(
-        height: 180,
+        height: widget.height,
         width: double.infinity,
         child: PageView.builder(
           controller: _pageController,

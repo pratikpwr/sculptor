@@ -1,4 +1,5 @@
 class EventModel {
+  final String id;
   final String title;
   final String eventType;
   final String organizer;
@@ -15,6 +16,7 @@ class EventModel {
   final String? eligibility;
 
   const EventModel({
+    required this.id,
     required this.title,
     required this.eventType,
     required this.organizer,
@@ -29,6 +31,7 @@ class EventModel {
   //events mock data
   static final events = [
     EventModel(
+      id: '1wvesd',
       title: 'Blood Donation Camp',
       eventType: 'Blood Donation',
       organizer: 'Red Cross Society',
@@ -45,6 +48,7 @@ class EventModel {
       eligibility: '18+',
     ),
     EventModel(
+      id: '1vwegw',
       title: 'Green Forestation',
       eventType: 'Planting',
       organizer: 'Green Peace',
@@ -61,6 +65,7 @@ class EventModel {
       eligibility: '12+',
     ),
     EventModel(
+      id: '1wevwe',
       title: 'Blood Donation Camp',
       eventType: 'Blood Donation',
       organizer: 'Red Cross Society',
@@ -77,6 +82,7 @@ class EventModel {
       eligibility: '18+',
     ),
     EventModel(
+      id: '1vsvew',
       title: 'Green Forestation',
       eventType: 'Planting',
       organizer: 'Green Peace',
@@ -93,6 +99,7 @@ class EventModel {
       eligibility: '12+',
     ),
     EventModel(
+      id: '1sddss',
       title: 'Blood Donation Camp',
       eventType: 'Blood Donation',
       organizer: 'Red Cross Society',
@@ -109,6 +116,7 @@ class EventModel {
       eligibility: '18+',
     ),
     EventModel(
+      id: '123r2',
       title: 'Green Forestation',
       eventType: 'Planting',
       organizer: 'Green Peace',

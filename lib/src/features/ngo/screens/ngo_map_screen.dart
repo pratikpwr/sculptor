@@ -82,14 +82,16 @@ class _NGOMapScreenState extends State<NGOMapScreen> {
     await controller.animateCamera(CameraUpdate.newCameraPosition(position));
 
     // show NGO card after 300ms
-    currentNGO = null;
-    Future.delayed(const Duration(milliseconds: 300)).then((value) {
+
+    setState(() {
+      currentNGO = null;
+    });
+
+    Future.delayed(const Duration(milliseconds: 500)).then((value) {
       setState(() {
         currentNGO = ngo;
       });
     });
-
-    // showNGO(ngo);
   }
 
   Future showNGO(NGOModel ngo) async {
