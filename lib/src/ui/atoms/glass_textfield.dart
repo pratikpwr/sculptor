@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../core/extensions/context_extension.dart';
-import '../molecules/glass_morphic_item.dart';
 import '../themes/colors.dart';
 import 'padding.dart';
 
@@ -21,6 +20,7 @@ class GlassTextField extends StatelessWidget {
     this.suffixIcon,
     this.textAlignVertical,
     this.enabled = true,
+    this.validator,
   });
 
   final TextEditingController? controller;
@@ -35,9 +35,19 @@ class GlassTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final TextAlignVertical? textAlignVertical;
   final bool enabled;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
+
+    final outlineInputBorder = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(
+        color: Colors.white.withOpacity(0.5),
+        width: 1.5,
+      ),
+    );
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -45,36 +55,32 @@ class GlassTextField extends StatelessWidget {
           Text(labelText!, style: context.textTheme.labelLarge),
           padding8,
         ],
-        GlassMorphicItem(
-          blur: 8,
-          opacity: 0.3,
-          borderRadius: BorderRadius.circular(8),
-          padding: EdgeInsets.symmetric(vertical: maxLines != null ? 4 : 0),
-          enableBorder: true,
-          child: TextFormField(
-            enabled: enabled,
-            controller: controller,
-            keyboardType: keyboardType,
-            onChanged: onChanged,
-            onEditingComplete: onEditingComplete,
-            inputFormatters: inputFormatters,
-            maxLines: maxLines,
-            style: context.textTheme.bodyMedium?.copyWith(
-              color: AppColors.primaryText,
-            ),
-            textAlignVertical: textAlignVertical,
-            decoration: InputDecoration(
-              hintText: hintText,
-              hintStyle: context.textTheme.bodySmall?.copyWith(
-                color: AppColors.secondaryText,
-              ),
-              border: InputBorder.none,
-              contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-              prefixIcon: prefixIcon,
-              suffixIcon: suffixIcon,
-            ),
-            onTapOutside: (_) => FocusScope.of(context).unfocus(),
+        TextFormField(
+          enabled: enabled,
+          controller: controller,
+          keyboardType: keyboardType,
+          onChanged: onChanged,
+          onEditingComplete: onEditingComplete,
+          inputFormatters: inputFormatters,
+          maxLines: maxLines,
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: AppColors.primaryText,
           ),
+          textAlignVertical: textAlignVertical,
+          decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: context.textTheme.bodySmall?.copyWith(
+              color: AppColors.secondaryText,
+            ),
+            border: outlineInputBorder,
+            focusedBorder: outlineInputBorder,
+            enabledBorder: outlineInputBorder,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+          ),
+          validator: validator,
+          onTapOutside: (_) => FocusScope.of(context).unfocus(),
         ),
       ],
     );
